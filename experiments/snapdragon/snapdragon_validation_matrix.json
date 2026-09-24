@@ -1,0 +1,117 @@
+﻿{
+  "artifact": "EdgeResilience V4 Snapdragon Validation Matrix",
+  "version": "1.0",
+  "date": "2026-09-24",
+  "status": "COMPONENT_LEVEL_SNAPDRAGON_VALIDATION_COMPLETE_FULL_MODEL_HTP_NOT_VERIFIED",
+  "target_device": {
+    "name": "Snapdragon X Elite CRD",
+    "os": "Windows 11",
+    "chipset": "qualcomm-snapdragon-x-elite",
+    "soc": "SC8380XP",
+    "hexagon": "v73",
+    "framework": "QNN",
+    "htp": true
+  },
+  "full_model": {
+    "name": "EdgeResilience V4 Temporal Predictor",
+    "source": "models/edgeresilience/temporal_predictor_v4.pt",
+    "onnx": "models/edgeresilience/snapdragon/temporal_predictor_v4_aihub.onnx",
+    "onnx_sha256": "3ADC9E8E476FB12074577C0083B5F7936A85B8093471F1A0D8349A096F185FD6",
+    "compile_status": "VERIFIED",
+    "compile_job": "jgdd3v6zg",
+    "htp_profile_status": "NOT_VERIFIED",
+    "htp_profile_job": "j5wl79zmp",
+    "reason": "QNN graph finalization failed with error code 6000",
+    "physical_vehicle": false,
+    "external_can": false,
+    "direct_actuation": false
+  },
+  "components": [
+    {
+      "name": "QKV structure control",
+      "artifact": "models/edgeresilience/snapdragon/v4_qkv_structure_control.onnx",
+      "sha256": "E42335EA876A7D89EC35D0EF65A87A80A4823582D9321329F881DDC5A0DA16A6",
+      "compile_status": "VERIFIED",
+      "htp_status": "VERIFIED",
+      "profile_job": "jgdd30okg",
+      "exact_v4": false,
+      "classification": "representative_structure"
+    },
+    {
+      "name": "Attention block control",
+      "artifact": "models/edgeresilience/snapdragon/v4_attention_block_qnn_control.onnx",
+      "sha256": "cf1a3917777744a35d18ef45c6de88050c03cd644f33f466d2196be48dc9a945",
+      "compile_status": "VERIFIED",
+      "htp_status": "VERIFIED",
+      "compile_job": "jp8ex84xp",
+      "profile_job": "j5qlywm4p",
+      "exact_v4": false,
+      "classification": "representative_structure"
+    },
+    {
+      "name": "Prediction head",
+      "artifact": "models/edgeresilience/snapdragon/v4_prediction_head_qnn_control.onnx",
+      "sha256": "6a6e753c16130134a960e5346cb12148d8d704bbab3283d9565ea585fa6c8afe",
+      "compile_status": "VERIFIED",
+      "htp_status": "VERIFIED",
+      "compile_job": "jp1nj38lg",
+      "profile_job": "jgk24dlog",
+      "exact_v4": true,
+      "classification": "exact_v4_prediction_head"
+    },
+    {
+      "name": "Encoder Block 1",
+      "artifact": "models/edgeresilience/snapdragon/v4_encoder_block1_qnn_control.onnx",
+      "sha256": "dfcc49384c374afbd5efffa21dc9cc60e9c931cbf69b07a0ab327a3393d7f214",
+      "compile_status": "VERIFIED",
+      "htp_status": "VERIFIED",
+      "compile_job": "jp4y18y8p",
+      "profile_job": "jp8ex8ekp",
+      "inference_ms": 0.045,
+      "peak_memory_mib": 27.84765625,
+      "npu_layers": 41,
+      "exact_v4": true,
+      "classification": "exact_v4_encoder_block"
+    },
+    {
+      "name": "Encoder Block 2",
+      "artifact": "models/edgeresilience/snapdragon/v4_encoder_block2_qnn_control.onnx",
+      "sha256": "288c40a00529807cbc5d2342fbe592d670534e5a9d3f1ef1f024e61618d226c1",
+      "compile_status": "VERIFIED",
+      "htp_status": "VERIFIED",
+      "compile_job": "jprl09qkp",
+      "profile_job": "j5qlywoep",
+      "inference_ms": 0.042,
+      "peak_memory_mib": 27.796875,
+      "npu_layers": 40,
+      "exact_v4": true,
+      "classification": "exact_v4_encoder_block"
+    },
+    {
+      "name": "Temporal pooling",
+      "artifact": "models/edgeresilience/snapdragon/v4_temporal_pooling_qnn_control.onnx",
+      "sha256": "567531706ca712f8ead75a8319fab0444b6e97a2a46a6f49d7d524fe7fb845e6",
+      "compile_status": "VERIFIED",
+      "htp_status": "VERIFIED",
+      "compile_job": "jgnznx8jg",
+      "profile_job": "jp8ex6yqp",
+      "inference_ms": 0.038,
+      "load_ms": 493.242,
+      "peak_memory_mib": 28.328125,
+      "npu_layers": 24,
+      "profile_results_sha256": "4E12D371DFCE61E738367DAE9C0ED06129EAEBE9A0D1A1E2BD31F1BF38136F17",
+      "runtime_log_sha256": "769DCEAE691E324B6A4EF840DCBEC828EBE9A0D1A0A1E2BD31F1BF38136F17",
+      "exact_v4": true,
+      "classification": "exact_v4_post_encoder_temporal_pooling"
+    }
+  ],
+  "reporting_rules": [
+    "Component latency values must not be summed and reported as full-model latency.",
+    "Component memory values must not be summed and reported as full-model memory.",
+    "CPU benchmark results must not be presented as Snapdragon performance.",
+    "Snapdragon X Elite CRD validation must not be described as HP-branded PC validation.",
+    "Simulation and virtual CAN/HIL remain software laboratory evidence only.",
+    "Full-model HTP status remains NOT VERIFIED."
+  ]
+}
+

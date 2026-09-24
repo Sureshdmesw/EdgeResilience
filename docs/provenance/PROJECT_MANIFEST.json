@@ -1,0 +1,23 @@
+{
+  "project": "EdgeResilience",
+  "title": "EdgeResilience: Snapdragon-Powered Predictive Intelligence for Connected Vehicle Safety",
+  "status": "competition_ready",
+  "workspace": "E:\\EdgeResilience",
+  "inherited_reference": "inherited\\Predictive-Cyber-Physical-Resilience",
+  "git_repository": "separate",
+  "v4_model_validated": true,
+  "v4_onnx_validated": true,
+  "v4_demo_validated": true,
+  "snapdragon_specific_validation": false,
+  "snapdragon_hardware_verified": false,
+  "qualcomm_qnn_verified": false,
+  "npu_verified": false,
+  "physical_vehicle_testing": false,
+  "external_can_transmission": false,
+  "direct_vehicle_actuation": false,
+  "production_vehicle_connection": false,
+  "deployment_status": "CPU_AND_ONNX_VALIDATED_SNAPDRAGON_PENDING",
+  "provenance_required": true,
+  "artifact_validation_required": true,
+  "competition": "Qualcomm Snapdragon AI Lab Build and Present Challenge"
+}

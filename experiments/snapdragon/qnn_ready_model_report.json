@@ -1,0 +1,73 @@
+{
+  "project": "EdgeResilience",
+  "artifact": "qnn_ready_model_report",
+  "generated_utc": "2026-09-20T10:54:42.148781+00:00",
+  "source_model": {
+    "path": "models\\edgeresilience\\temporal_predictor_v4_dynamic.onnx",
+    "sha256": "ACB43A20C9FA64577C56BDFE3AA3C2EA96B6691420C0A7994DC5FD9F230C0E5D",
+    "integrity": "PASS",
+    "mod_nodes": 2,
+    "mod_analysis": {
+      "mod_nodes": [
+        {
+          "node": "/encoder/layers.0/self_attn/Mod",
+          "input_a": [],
+          "input_b": [],
+          "result": [],
+          "both_constant": true
+        },
+        {
+          "node": "/encoder/layers.1/self_attn/Mod",
+          "input_a": [],
+          "input_b": [],
+          "result": [],
+          "both_constant": true
+        }
+      ],
+      "all_mod_inputs_are_constants": true
+    }
+  },
+  "derivative_model": {
+    "path": "models\\edgeresilience\\snapdragon\\temporal_predictor_v4_qnn_ready.onnx",
+    "sha256": "E2B22D8A872F1AFEF2CFD34FDE11295EC69F2BC3C4324402F284EC4F6422A62E",
+    "provenance": "ADAPTED from validated V4 dynamic ONNX via ORT full graph optimization (constant folding)",
+    "relationship_to_source": "ADAPTED",
+    "onnx_checker": "PASS",
+    "mod_nodes_remaining": 0,
+    "node_count": 176,
+    "operators": [
+      "Add",
+      "Cast",
+      "Concat",
+      "Div",
+      "Erf",
+      "Gather",
+      "Gemm",
+      "LayerNormalization",
+      "MatMul",
+      "Mul",
+      "ReduceSum",
+      "Relu",
+      "Reshape",
+      "Shape",
+      "Sigmoid",
+      "Slice",
+      "Softmax",
+      "Sqrt",
+      "Squeeze",
+      "Transpose",
+      "Unsqueeze"
+    ]
+  },
+  "numerical_equivalence": {
+    "samples": 200,
+    "max_absolute_error": 0.0,
+    "mean_absolute_error": 0.0,
+    "rmse": 0.0,
+    "tolerance": 1e-05,
+    "result": "PASS"
+  },
+  "qnn_deployment_note": "This derivative is prepared for QNN conversion when a Snapdragon device and QNN SDK are available. Conversion command: qnn-onnx-converter --input_network temporal_predictor_v4_qnn_ready.onnx --output_path temporal_predictor_v4.cpp --input_dim vehicle_temporal_features 1,12,17. Actual QNN execution: NOT VERIFIED (no Snapdragon hardware present).",
+  "snapdragon_status": "NOT VERIFIED",
+  "qnn_status": "NOT VERIFIED"
+}

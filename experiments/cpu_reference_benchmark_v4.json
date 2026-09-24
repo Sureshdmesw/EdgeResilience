@@ -1,0 +1,23 @@
+{
+  "experiment": "EdgeResilience V4 CPU reference benchmark",
+  "status": "PASS",
+  "model": "temporal_predictor_v4",
+  "model_format": "PyTorch",
+  "device": "reference_cpu",
+  "hardware_verified": false,
+  "accelerator_verified": false,
+  "dataset": "edgeresilience_temporal_dataset_v4.jsonl",
+  "samples_per_run": 1000,
+  "warmup_runs": 20,
+  "benchmark_runs": 100,
+  "mean_batch_latency_ms": 27.660565000010138,
+  "median_batch_latency_ms": 27.26685000004636,
+  "p95_batch_latency_ms": 30.315045000065766,
+  "throughput_samples_per_second": 36152.55147534526,
+  "input_shape": [
+    1000,
+    12,
+    17
+  ],
+  "notes": "CPU reference measurement only. No Snapdragon hardware or Qualcomm accelerator performance is claimed."
+}

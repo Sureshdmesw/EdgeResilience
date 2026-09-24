@@ -1,0 +1,156 @@
+{
+  "project": "EdgeResilience",
+  "artifact": "model_compatibility_report",
+  "generated_utc": "2026-09-20T10:54:28.091577+00:00",
+  "phase": "PHASE_4_MODEL_COMPATIBILITY_ANALYSIS",
+  "source_model": {
+    "path": "models/edgeresilience/temporal_predictor_v4_dynamic.onnx",
+    "sha256": "ACB43A20C9FA64577C56BDFE3AA3C2EA96B6691420C0A7994DC5FD9F230C0E5D",
+    "integrity": "PASS",
+    "ir_version": 8,
+    "opsets": {
+      "ai.onnx": 17
+    },
+    "node_count": 336,
+    "operators": [
+      "Add",
+      "Cast",
+      "Concat",
+      "Constant",
+      "Div",
+      "Erf",
+      "Gather",
+      "Gemm",
+      "LayerNormalization",
+      "MatMul",
+      "Mod",
+      "Mul",
+      "ReduceSum",
+      "Relu",
+      "Reshape",
+      "Shape",
+      "Sigmoid",
+      "Slice",
+      "Softmax",
+      "Sqrt",
+      "Squeeze",
+      "Transpose",
+      "Unsqueeze"
+    ],
+    "initializer_count": 35,
+    "external_data_count": 0,
+    "inputs": [
+      {
+        "name": "vehicle_temporal_features",
+        "elem_type": 1,
+        "shape": [
+          "batch",
+          12,
+          17
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "future_resilience_degradation",
+        "elem_type": 1,
+        "shape": [
+          "batch"
+        ]
+      }
+    ],
+    "onnx_checker": "PASS",
+    "mod_operator_present": true,
+    "mod_operator_note": "2 Mod nodes present. Both operate exclusively on Constant inputs (constant-foldable). Eliminated in QNN-ready derivative via ORT_ENABLE_BASIC graph optimization.",
+    "qnn_compatibility": "REQUIRES_DERIVATIVE \u2014 Mod nodes eliminated in derivative"
+  },
+  "derivative_model": {
+    "path": "models/edgeresilience/snapdragon/temporal_predictor_v4_qnn_ready.onnx",
+    "sha256": "E2B22D8A872F1AFEF2CFD34FDE11295EC69F2BC3C4324402F284EC4F6422A62E",
+    "expected_sha256": "E2B22D8A872F1AFEF2CFD34FDE11295EC69F2BC3C4324402F284EC4F6422A62E",
+    "integrity": "PASS",
+    "provenance": "ADAPTED from validated V4 dynamic ONNX via ORT_ENABLE_BASIC constant folding",
+    "relationship_to_source": "ADAPTED",
+    "ir_version": 8,
+    "opsets": {
+      "ai.onnx": 17,
+      "com.microsoft.nchwc": 1,
+      "ai.onnx.ml": 5,
+      "ai.onnx.training": 1,
+      "ai.onnx.preview": 1,
+      "ai.onnx.preview.training": 1,
+      "com.microsoft.experimental": 1,
+      "com.microsoft": 1,
+      "org.pytorch.aten": 1
+    },
+    "node_count": 176,
+    "operators": [
+      "Add",
+      "Cast",
+      "Concat",
+      "Div",
+      "Erf",
+      "Gather",
+      "Gemm",
+      "LayerNormalization",
+      "MatMul",
+      "Mul",
+      "ReduceSum",
+      "Relu",
+      "Reshape",
+      "Shape",
+      "Sigmoid",
+      "Slice",
+      "Softmax",
+      "Sqrt",
+      "Squeeze",
+      "Transpose",
+      "Unsqueeze"
+    ],
+    "initializer_count": 54,
+    "external_data_count": 0,
+    "inputs": [
+      {
+        "name": "vehicle_temporal_features",
+        "elem_type": 1,
+        "shape": [
+          "batch",
+          12,
+          17
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "future_resilience_degradation",
+        "elem_type": 1,
+        "shape": [
+          "batch"
+        ]
+      }
+    ],
+    "onnx_checker": "PASS",
+    "operators_unsupported_by_qnn": [],
+    "operators_with_caveats": {
+      "LayerNormalization": "CPU backend: supported. HTP/NPU: requires QNN SDK >= 2.10",
+      "Shape": "Supported; dynamic shape handling may require static compilation for HTP"
+    },
+    "qnn_compatibility_assessment": "COMPATIBLE",
+    "assessment_basis": "All operators in the derivative are in the QNN-supported set for opset 17. No external data. No ORT-internal fused ops. LayerNormalization: CPU backend supported; HTP requires QNN SDK >= 2.10. Shape: supported with static compilation for HTP backend.",
+    "qnn_cpu_backend": "EXPECTED_COMPATIBLE \u2014 requires hardware verification",
+    "qnn_htp_npu_backend": "EXPECTED_COMPATIBLE with batch=1 static compile \u2014 requires hardware verification",
+    "conversion_command": "qnn-onnx-converter --input_network models/edgeresilience/snapdragon/temporal_predictor_v4_qnn_ready.onnx --output_path models/edgeresilience/snapdragon/temporal_predictor_v4.cpp --input_dim vehicle_temporal_features 1,12,17"
+  },
+  "numerical_equivalence_derivative_vs_source": {
+    "samples": 200,
+    "max_absolute_error": 0.0,
+    "mean_absolute_error": 0.0,
+    "rmse": 0.0,
+    "tolerance": 1e-05,
+    "result": "PASS"
+  },
+  "protected_artifact_status": "NOT MODIFIED",
+  "snapdragon_status": "NOT VERIFIED",
+  "qnn_status": "NOT VERIFIED",
+  "note": "COMPATIBILITY IS THEORETICAL. No QNN SDK installed. No conversion performed. No Snapdragon hardware present. Actual compatibility must be verified on a Snapdragon device."
+}

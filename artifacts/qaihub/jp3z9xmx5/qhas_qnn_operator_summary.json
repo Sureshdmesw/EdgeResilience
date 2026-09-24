@@ -1,0 +1,156 @@
+[
+  {
+    "op": "LayerNorm",
+    "cycles": 24108,
+    "percent_active_cycles": 37.74837547952713,
+    "dominant_path_percent": 29.558375135241466,
+    "num_htp_ops": 17,
+    "dram_read": 4096,
+    "dram_write": 0,
+    "vtcm_read": 63488,
+    "vtcm_write": 43008
+  },
+  {
+    "op": "Softmax",
+    "cycles": 9530,
+    "percent_active_cycles": 14.922101307445393,
+    "dominant_path_percent": 18.746926330284253,
+    "num_htp_ops": 1,
+    "dram_read": 0,
+    "dram_write": 0,
+    "vtcm_read": 2048,
+    "vtcm_write": 2048
+  },
+  {
+    "op": "Transpose",
+    "cycles": 6232,
+    "percent_active_cycles": 9.758083457292727,
+    "dominant_path_percent": 12.259270187862693,
+    "num_htp_ops": 4,
+    "dram_read": 0,
+    "dram_write": 0,
+    "vtcm_read": 12288,
+    "vtcm_write": 12288
+  },
+  {
+    "op": "Relu",
+    "cycles": 4710,
+    "percent_active_cycles": 7.374931496124638,
+    "dominant_path_percent": 5.960460312776631,
+    "num_htp_ops": 5,
+    "dram_read": 18432,
+    "dram_write": 0,
+    "vtcm_read": 30720,
+    "vtcm_write": 43008
+  },
+  {
+    "op": "Output",
+    "cycles": 4223,
+    "percent_active_cycles": 6.612385500665466,
+    "dominant_path_percent": 8.307268614143798,
+    "num_htp_ops": 1,
+    "dram_read": 0,
+    "dram_write": 2048,
+    "vtcm_read": 2048,
+    "vtcm_write": 0
+  },
+  {
+    "op": "ReduceSum",
+    "cycles": 3889,
+    "percent_active_cycles": 6.089407343615439,
+    "dominant_path_percent": 7.650240975705715,
+    "num_htp_ops": 1,
+    "dram_read": 0,
+    "dram_write": 0,
+    "vtcm_read": 12288,
+    "vtcm_write": 4096
+  },
+  {
+    "op": "Input",
+    "cycles": 3028,
+    "percent_active_cycles": 4.74125107648947,
+    "dominant_path_percent": 5.956526015540474,
+    "num_htp_ops": 3,
+    "dram_read": 4096,
+    "dram_write": 0,
+    "vtcm_read": 0,
+    "vtcm_write": 4096
+  },
+  {
+    "op": "ElementWiseAdd",
+    "cycles": 1838,
+    "percent_active_cycles": 2.87794566664057,
+    "dominant_path_percent": 3.0156388315137206,
+    "num_htp_ops": 6,
+    "dram_read": 4096,
+    "dram_write": 0,
+    "vtcm_read": 32768,
+    "vtcm_write": 16384
+  },
+  {
+    "op": "ElementWiseMultiply",
+    "cycles": 1751,
+    "percent_active_cycles": 2.7417208173490955,
+    "dominant_path_percent": 3.444477230254746,
+    "num_htp_ops": 1,
+    "dram_read": 0,
+    "dram_write": 0,
+    "vtcm_read": 18432,
+    "vtcm_write": 12288
+  },
+  {
+    "op": "FullyConnected",
+    "cycles": 1746,
+    "percent_active_cycles": 2.733891803022,
+    "dominant_path_percent": 2.2268122356644047,
+    "num_htp_ops": 10,
+    "dram_read": 24576,
+    "dram_write": 0,
+    "vtcm_read": 61440,
+    "vtcm_write": 43008
+  },
+  {
+    "op": "Gelu",
+    "cycles": 1169,
+    "percent_active_cycles": 1.8304235496750958,
+    "dominant_path_percent": 1.5697845972263207,
+    "num_htp_ops": 5,
+    "dram_read": 6144,
+    "dram_write": 0,
+    "vtcm_read": 10240,
+    "vtcm_write": 8192
+  },
+  {
+    "op": "Sigmoid",
+    "cycles": 907,
+    "percent_active_cycles": 1.420183198935254,
+    "dominant_path_percent": 1.1763548736107012,
+    "num_htp_ops": 5,
+    "dram_read": 4096,
+    "dram_write": 0,
+    "vtcm_read": 6144,
+    "vtcm_write": 6144
+  },
+  {
+    "op": "$Const",
+    "cycles": 716,
+    "percent_active_cycles": 1.1211148516401785,
+    "dominant_path_percent": 0.0924559850496705,
+    "num_htp_ops": 8,
+    "dram_read": 8192,
+    "dram_write": 0,
+    "vtcm_read": 0,
+    "vtcm_write": 8192
+  },
+  {
+    "op": "SystemService_ChunkPreload",
+    "cycles": 18,
+    "percent_active_cycles": 0.028184451577546385,
+    "dominant_path_percent": 0.03540867512540573,
+    "num_htp_ops": 1,
+    "dram_read": 0,
+    "dram_write": 0,
+    "vtcm_read": 0,
+    "vtcm_write": 0
+  }
+]

@@ -1,0 +1,74 @@
+﻿{
+  "artifact": "EdgeResilience V4 ONNX Deployment Lineage",
+  "version": "1.0",
+  "date": "2026-09-24",
+  "primary_model": {
+    "name": "EdgeResilience V4 Temporal Predictor",
+    "pytorch": {
+      "path": "models/edgeresilience/temporal_predictor_v4.pt",
+      "classification": "new_edgeresilience_artifact",
+      "status": "VALIDATED"
+    }
+  },
+  "canonical_onnx": {
+    "static": {
+      "path": "models/edgeresilience/temporal_predictor_v4.onnx",
+      "external_data": "models/edgeresilience/temporal_predictor_v4.onnx.data",
+      "classification": "deployment_representation",
+      "status": "VALIDATED"
+    },
+    "dynamic": {
+      "path": "models/edgeresilience/temporal_predictor_v4_dynamic.onnx",
+      "external_data": "models/edgeresilience/temporal_predictor_v4_dynamic.onnx.data",
+      "classification": "deployment_representation",
+      "status": "VALIDATED"
+    }
+  },
+  "qualcomm_ai_hub_packaging": {
+    "external_weight_format": {
+      "classification": "qualcomm_supported_packaging",
+      "description": "ONNX model packaged with its external .data weight file in the required model directory structure."
+    },
+    "single_file_adaptation": {
+      "path": "models/edgeresilience/snapdragon/temporal_predictor_v4_aihub.onnx",
+      "classification": "adapted_edgeresilience_deployment_artifact",
+      "purpose": "Single-file AI Hub deployment packaging.",
+      "status": "VALIDATED",
+      "numerical_equivalence_to_v4_onnx": "PASS"
+    }
+  },
+  "qnn_deployment_derivative": {
+    "path": "models/edgeresilience/snapdragon/temporal_predictor_v4_qnn_ready.onnx",
+    "classification": "adapted_edgeresilience_deployment_artifact",
+    "purpose": "QNN-oriented ONNX compatibility/deployment investigation.",
+    "status": "VALIDATED"
+  },
+  "full_model_snapdragon": {
+    "compile_status": "VERIFIED",
+    "compile_job": "jgdd3v6zg",
+    "htp_execution_status": "NOT_VERIFIED",
+    "htp_profile_job": "j5wl79zmp",
+    "reason": "QNN graph finalization failed with error code 6000"
+  },
+  "component_validation": {
+    "purpose": "Component-level deployment validation. These artifacts do not replace the V4 model.",
+    "exact_v4_components": [
+      "Encoder Block 1",
+      "Encoder Block 2",
+      "Temporal pooling",
+      "Prediction head"
+    ],
+    "representative_structure_controls": [
+      "QKV structure control",
+      "Attention block control"
+    ],
+    "reporting_rule": "Component measurements must not be summed or reported as full-model latency, memory, or performance."
+  },
+  "safety_boundary": {
+    "test_type": "software_simulation",
+    "physical_vehicle": false,
+    "external_can_transmission": false,
+    "direct_actuation": false,
+    "production_vehicle_connection": false
+  }
+}

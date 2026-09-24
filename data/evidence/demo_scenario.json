@@ -1,0 +1,151 @@
+{
+  "artifact": "EdgeResilience demo scenario",
+  "test_type": "software simulation",
+  "physical_vehicle_test": false,
+  "external_can_transmission": false,
+  "direct_actuation": false,
+  "cycles": [
+    {
+      "cycle_id": "cycle-001",
+      "pipeline": {
+        "risk_state": {
+          "y3_probability": 0.72,
+          "y6_probability": 0.61,
+          "predictive_risk_level": "HIGH",
+          "uncertainty_score": 0.55,
+          "confidence_level": "MEDIUM",
+          "connectivity_state": "CONNECTED",
+          "integrity_score": 0.95,
+          "sensor_plausibility_score": 0.95,
+          "resilience_score": 0.6455,
+          "evidence_required": true,
+          "reason_codes": [
+            "Y3_PREDICTIVE_RISK",
+            "Y6_PREDICTIVE_RISK"
+          ]
+        },
+        "connectivity_state": "CONNECTED",
+        "local_inference_allowed": true,
+        "local_buffering_required": false,
+        "synchronization_allowed": true,
+        "evidence_required": true,
+        "reason_codes": [
+          "Y3_PREDICTIVE_RISK",
+          "Y6_PREDICTIVE_RISK"
+        ]
+      },
+      "recovery": {
+        "recovered": false,
+        "synchronization_allowed": false,
+        "records_available": 1,
+        "reason": "INITIAL_CONNECTIVITY_STATE"
+      },
+      "synchronization_ready": false,
+      "synchronization_batch": [],
+      "evidence_count": 1,
+      "label": "PREDICTIVE WARNING / CONNECTED"
+    },
+    {
+      "cycle_id": "cycle-002",
+      "pipeline": {
+        "risk_state": {
+          "y3_probability": 0.72,
+          "y6_probability": 0.61,
+          "predictive_risk_level": "HIGH",
+          "uncertainty_score": 0.55,
+          "confidence_level": "MEDIUM",
+          "connectivity_state": "DISCONNECTED",
+          "integrity_score": 0.7,
+          "sensor_plausibility_score": 0.75,
+          "resilience_score": 0.45299999999999996,
+          "evidence_required": true,
+          "reason_codes": [
+            "Y3_PREDICTIVE_RISK",
+            "Y6_PREDICTIVE_RISK",
+            "CONNECTIVITY_LOSS",
+            "INTEGRITY_DEGRADATION",
+            "SENSOR_PLAUSIBILITY_DEGRADATION"
+          ]
+        },
+        "connectivity_state": "DISCONNECTED",
+        "local_inference_allowed": true,
+        "local_buffering_required": true,
+        "synchronization_allowed": false,
+        "evidence_required": true,
+        "reason_codes": [
+          "Y3_PREDICTIVE_RISK",
+          "Y6_PREDICTIVE_RISK",
+          "CONNECTIVITY_LOSS",
+          "INTEGRITY_DEGRADATION",
+          "SENSOR_PLAUSIBILITY_DEGRADATION"
+        ]
+      },
+      "recovery": {
+        "recovered": false,
+        "synchronization_allowed": false,
+        "records_available": 2,
+        "reason": "CONNECTIVITY_NOT_RECOVERED"
+      },
+      "synchronization_ready": false,
+      "synchronization_batch": [],
+      "evidence_count": 2,
+      "label": "CONNECTIVITY LOSS / LOCAL RESILIENCE"
+    },
+    {
+      "cycle_id": "cycle-003",
+      "pipeline": {
+        "risk_state": {
+          "y3_probability": 0.72,
+          "y6_probability": 0.61,
+          "predictive_risk_level": "HIGH",
+          "uncertainty_score": 0.55,
+          "confidence_level": "MEDIUM",
+          "connectivity_state": "CONNECTED",
+          "integrity_score": 0.95,
+          "sensor_plausibility_score": 0.95,
+          "resilience_score": 0.6455,
+          "evidence_required": true,
+          "reason_codes": [
+            "Y3_PREDICTIVE_RISK",
+            "Y6_PREDICTIVE_RISK"
+          ]
+        },
+        "connectivity_state": "CONNECTED",
+        "local_inference_allowed": true,
+        "local_buffering_required": false,
+        "synchronization_allowed": true,
+        "evidence_required": true,
+        "reason_codes": [
+          "Y3_PREDICTIVE_RISK",
+          "Y6_PREDICTIVE_RISK"
+        ]
+      },
+      "recovery": {
+        "recovered": true,
+        "synchronization_allowed": true,
+        "records_available": 3,
+        "reason": "CONNECTIVITY_RECOVERED_BUFFER_READY"
+      },
+      "synchronization_ready": true,
+      "synchronization_batch": [
+        {
+          "event_id": "edge:cycle-001",
+          "payload_digest": "2001cdcdaad3ab19dfc47beadebb96476af34ad7da997d37ae71975c24ea6bf0",
+          "sequence_number": 0
+        },
+        {
+          "event_id": "edge:cycle-002",
+          "payload_digest": "a5e63c0dbad5ca957947640c86e04538827503aae76f3987d90da563d71df851",
+          "sequence_number": 1
+        },
+        {
+          "event_id": "edge:cycle-003",
+          "payload_digest": "b8a817846e8c4ae353a91f01b6ef125e170712614f52934bc433b3b7c9061e26",
+          "sequence_number": 2
+        }
+      ],
+      "evidence_count": 3,
+      "label": "CONNECTIVITY RECOVERY / SYNCHRONIZATION"
+    }
+  ]
+}

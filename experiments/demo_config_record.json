@@ -1,0 +1,91 @@
+{
+  "artifact": "EdgeResilience competition demo configuration record",
+  "classification": "new EdgeResilience artifact",
+  "model": {
+    "name": "EdgeResilience_V4_TemporalPredictor",
+    "checkpoint": "models/edgeresilience/temporal_predictor_v4.pt",
+    "checkpoint_sha256": "b551ad9f02b56668ef3f8f7873133748275307f1934ec7fd77da14e7325d26b9",
+    "feature_count": 17,
+    "observation_steps": 12,
+    "target": "future_degradation"
+  },
+  "policy": {
+    "name": "V4_DEGRADATION_DEMO_POLICY_V1",
+    "type": "deterministic interpretation",
+    "learned_thresholds": false,
+    "vehicle_safety_limits": false,
+    "snapdragon_hardware_limits": false,
+    "thresholds": {
+      "NORMAL": "< 0.02",
+      "LOW": "0.02 to 0.04",
+      "MEDIUM": "0.04 to 0.06",
+      "HIGH": "0.06 to 0.07",
+      "CRITICAL": ">= 0.07"
+    }
+  },
+  "dataset": {
+    "path": "data/processed/temporal/edgeresilience_temporal_dataset_v4.jsonl",
+    "sha256": "02a82f0f5ee78dc4e3be28b81b53b6eb4eb884600a4734f3eb3aaa279cb3a911",
+    "records_used": [0, 1, 2]
+  },
+  "cycles": [
+    {
+      "cycle_id": "cycle-001",
+      "label": "Predictive warning / connected",
+      "connectivity": {
+        "packet_loss_rate": 0.01,
+        "latency_ms": 40.0,
+        "heartbeat_failure": false
+      },
+      "expected_connectivity_state": "CONNECTED",
+      "expected_prediction": 0.033857,
+      "expected_risk_level": "LOW",
+      "expected_local_buffering_required": false,
+      "expected_recovery_detected": false,
+      "expected_synchronization_ready": false
+    },
+    {
+      "cycle_id": "cycle-002",
+      "label": "Connectivity loss / local resilience",
+      "connectivity": {
+        "packet_loss_rate": 0.85,
+        "latency_ms": 400.0,
+        "heartbeat_failure": true
+      },
+      "expected_connectivity_state": "DISCONNECTED",
+      "expected_prediction": 0.003141,
+      "expected_risk_level": "NORMAL",
+      "expected_local_buffering_required": true,
+      "expected_recovery_detected": false,
+      "expected_synchronization_ready": false
+    },
+    {
+      "cycle_id": "cycle-003",
+      "label": "Connectivity recovery / synchronization",
+      "connectivity": {
+        "packet_loss_rate": 0.01,
+        "latency_ms": 40.0,
+        "heartbeat_failure": false
+      },
+      "expected_connectivity_state": "CONNECTED",
+      "expected_prediction": 0.043561,
+      "expected_risk_level": "MEDIUM",
+      "expected_local_buffering_required": false,
+      "expected_recovery_detected": true,
+      "expected_synchronization_ready": true
+    }
+  ],
+  "safety_boundary": {
+    "test_type": "software_simulation",
+    "physical_vehicle": false,
+    "external_can_transmission": false,
+    "direct_actuation": false,
+    "production_vehicle_connection": false,
+    "snapdragon_hardware_verified": false,
+    "qualcomm_qnn_verified": false
+  },
+  "evidence_artifact": "data/evidence/v4_demo_scenario.json",
+  "demo_runner": "demo/run_demo.py",
+  "dashboard": "src/dashboard/server.py",
+  "dashboard_url": "http://127.0.0.1:8765"
+}

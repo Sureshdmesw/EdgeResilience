@@ -1,0 +1,301 @@
+<div class="topnav" role="banner">
+  <div class="topnav-brand">
+    <div class="brand-mark">ER</div>
+    <div class="brand-name"><span>Edge</span>Resilience</div>
+  </div>
+  <div class="topnav-tabs" role="navigation" aria-label="Main navigation">
+    <button class="tab active" onclick="showPage('cmd')" id="nav-cmd" aria-label="Command Center">
+      <span class="tab-icon">&#9635;</span><span class="tab-label">Command Center</span>
+    </button>
+    <button class="tab" onclick="showPage('demo')" id="nav-demo" aria-label="Live Demo">
+      <span class="tab-icon">&#9654;</span><span class="tab-label">Live Demo</span>
+    </button>
+    <button class="tab" onclick="showPage('ai')" id="nav-ai" aria-label="AI Intelligence">
+      <span class="tab-icon">&#9672;</span><span class="tab-label">Intelligence</span>
+    </button>
+    <button class="tab" onclick="showPage('resilience')" id="nav-resilience" aria-label="Resilience">
+      <span class="tab-icon">&#8635;</span><span class="tab-label">Resilience</span>
+    </button>
+    <button class="tab" onclick="showPage('evidence')" id="nav-evidence" aria-label="Evidence">
+      <span class="tab-icon">&#8801;</span><span class="tab-label">Evidence</span>
+    </button>
+    <button class="tab" onclick="showPage('deploy')" id="nav-deploy" aria-label="Deployment">
+      <span class="tab-icon">&#9678;</span><span class="tab-label">Deployment</span>
+    </button>
+    <button class="tab" onclick="showPage('system')" id="nav-system" aria-label="System">
+      <span class="tab-icon">&#9636;</span><span class="tab-label">System</span>
+    </button>
+  </div>
+  <div class="topnav-right">
+    <div class="sys-pill pill-good"><span class="pill-dot pulse"></span>LOCAL INFERENCE ACTIVE</div>
+    <div class="sys-pill pill-warn"><span class="pill-dot"></span>SNAPDRAGON PENDING</div>
+    <button class="mode-btn" id="pres-btn" onclick="togglePresMode()" aria-label="Toggle presentation mode">&#9654; Present</button>
+  </div>
+</div>
+<div class="shell">
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- PAGE: COMMAND CENTER                                            -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<div class="page active" id="page-cmd">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">Qualcomm Snapdragon AI Lab Build and Present Challenge</div>
+    <div class="hero-title"><span>Edge</span>Resilience</div>
+    <div class="hero-tagline">Snapdragon-Powered Predictive Intelligence for Connected Vehicle Safety</div>
+    <div class="hero-sub">V4 Temporal Transformer &middot; 17 features &times; 12 steps &middot; local edge inference &middot; connectivity resilience &middot; tamper-evident evidence</div>
+    <div class="hero-badges" id="cmd-hero-badges">
+      <div class="loading"><div class="spinner"></div>Loading system state&hellip;</div>
+    </div>
+  </div>
+
+  <!-- SYSTEM STATE â€” 3 dominant cards -->
+  <div class="state-hero" id="cmd-state-hero">
+    <div class="state-card card-accent" id="sc-predict">
+      <div class="state-card-eyebrow">&#9672; AI Prediction</div>
+      <div class="state-card-val" id="sc-deg-val" style="color:var(--accent)">&mdash;</div>
+      <div class="state-card-label">future_degradation</div>
+      <div class="state-card-sub" id="sc-risk-val">&mdash;</div>
+      <div style="font-size:9.5px;color:var(--text4);margin-top:6px;font-family:var(--mono)">V4_DEGRADATION_DEMO_POLICY_V1</div>
+    </div>
+    <div class="state-card card-good" id="sc-conn">
+      <div class="state-card-eyebrow">&#8635; Connectivity</div>
+      <div class="state-card-val" id="sc-conn-val" style="color:var(--good)">&mdash;</div>
+      <div class="state-card-label">connectivity state</div>
+      <div style="margin-top:10px;display:flex;flex-direction:column;gap:4px">
+        <div style="display:flex;justify-content:space-between;font-size:11px">
+          <span style="color:var(--text3)">Local inference</span>
+          <span style="color:var(--good);font-weight:700">ALWAYS ACTIVE</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:11px">
+          <span style="color:var(--text3)">Evidence records</span>
+          <span style="font-weight:700;font-family:var(--mono)" id="sc-evcount">&mdash;</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:11px">
+          <span style="color:var(--text3)">Sync status</span>
+          <span style="font-weight:700" id="sc-sync">&mdash;</span>
+        </div>
+      </div>
+    </div>
+    <div class="state-card card-purple" id="sc-trust">
+      <div class="state-card-eyebrow">&#10003; Validation</div>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:4px">
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:11.5px">
+          <span style="color:var(--text2)">CPU reference</span>
+          <span class="badge badge-v">VERIFIED</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:11.5px">
+          <span style="color:var(--text2)">ONNX runtime</span>
+          <span class="badge badge-v">VERIFIED</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:11.5px">
+          <span style="color:var(--text2)">Test MAE</span>
+          <span style="font-family:var(--mono);font-size:11px;color:var(--good);font-weight:700">0.0051</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:11.5px">
+          <span style="color:var(--text2)">ONNX speedup</span>
+          <span style="font-family:var(--mono);font-size:11px;color:var(--accent);font-weight:700">~5.99&times; CPU</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:11.5px">
+          <span style="color:var(--text2)">Snapdragon HW</span>
+          <span class="badge badge-p">NOT VERIFIED</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PIPELINE FLOW STRIP -->
+  <div style="margin-bottom:20px">
+    <div style="font-size:9.5px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.14em;margin-bottom:10px">Edge AI Pipeline</div>
+    <div class="flow-strip" id="cmd-flow">
+      <div class="flow-step fs-active">
+        <span class="fs-label">Observe</span>
+        <span class="fs-val">17&times;12</span>
+        <span class="fs-sub">cyber features</span>
+      </div>
+      <div class="flow-arrow">&#8594;</div>
+      <div class="flow-step fs-active">
+        <span class="fs-label">Predict</span>
+        <span class="fs-val" id="fs-predict">&mdash;</span>
+        <span class="fs-sub">future_degradation</span>
+      </div>
+      <div class="flow-arrow">&#8594;</div>
+      <div class="flow-step" id="fs-assess-step">
+        <span class="fs-label">Assess</span>
+        <span class="fs-val" id="fs-risk">&mdash;</span>
+        <span class="fs-sub">risk level</span>
+      </div>
+      <div class="flow-arrow">&#8594;</div>
+      <div class="flow-step fs-good">
+        <span class="fs-label">Resilience</span>
+        <span class="fs-val" style="color:var(--good);font-size:11px">LOCAL</span>
+        <span class="fs-sub">always active</span>
+      </div>
+      <div class="flow-arrow">&#8594;</div>
+      <div class="flow-step" id="fs-preserve-step">
+        <span class="fs-label">Preserve</span>
+        <span class="fs-val" id="fs-buf">&mdash;</span>
+        <span class="fs-sub">evidence records</span>
+      </div>
+      <div class="flow-arrow">&#8594;</div>
+      <div class="flow-step" id="fs-recover-step">
+        <span class="fs-label">Recover</span>
+        <span class="fs-val" id="fs-sync">&mdash;</span>
+        <span class="fs-sub">sync state</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENARIO TIMELINE + QUICK STATS -->
+  <div class="g21" style="margin-bottom:20px">
+    <div class="card">
+      <div class="card-hd">Three-Cycle Scenario &mdash; <span style="color:var(--text2);font-weight:400;text-transform:none">Connected &rarr; Disconnected &rarr; Recovery</span></div>
+      <div id="cmd-timeline"><div class="loading"><div class="spinner"></div>Loading&hellip;</div></div>
+    </div>
+    <div class="card">
+      <div class="card-hd">System Intelligence</div>
+      <div class="mrow"><span class="mlabel">Model</span><span class="mval" style="color:var(--accent);font-size:10.5px">V4 Temporal Predictor</span></div>
+      <div class="mrow"><span class="mlabel">Parameters</span><span class="mval">71,170</span></div>
+      <div class="mrow"><span class="mlabel">Input window</span><span class="mval">12 steps &times; 17 features</span></div>
+      <div class="mrow"><span class="mlabel">Test MAE</span><span class="mval" style="color:var(--good)">0.0051</span></div>
+      <div class="mrow"><span class="mlabel">Test RMSE</span><span class="mval" style="color:var(--good)">0.0066</span></div>
+      <div class="mrow"><span class="mlabel">ONNX max error</span><span class="mval" style="color:var(--good)">5.96e-08</span></div>
+      <div class="mrow"><span class="mlabel">ONNX speedup</span><span class="mval" style="color:var(--accent)">~5.99&times; CPU-to-CPU</span></div>
+      <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border)">
+        <div style="font-size:9.5px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px">Deployment Status</div>
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <div style="display:flex;justify-content:space-between;font-size:11.5px"><span style="color:var(--text2)">CPU reference</span><span class="badge badge-v">VERIFIED</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:11.5px"><span style="color:var(--text2)">ONNX Runtime</span><span class="badge badge-v">VERIFIED</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:11.5px"><span style="color:var(--text2)">Snapdragon HW</span><span class="badge badge-p">NOT VERIFIED</span></div>
+          <div style="display:flex;justify-content:space-between;font-size:11.5px"><span style="color:var(--text2)">QNN / NPU</span><span class="badge badge-p">NOT VERIFIED</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SAFETY BOUNDARY -->
+  <div class="safety-bar">
+    <span style="font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.1em">Safety Boundary</span>
+    <div class="safety-item">Physical vehicle: <span class="s-no">NO</span></div>
+    <div class="safety-item">External CAN: <span class="s-no">NO</span></div>
+    <div class="safety-item">Direct actuation: <span class="s-no">NO</span></div>
+    <div class="safety-item">Production vehicle: <span class="s-no">NO</span></div>
+    <div class="safety-item">Classification: <span class="s-yes">SOFTWARE SIMULATION / VIRTUAL LAB</span></div>
+  </div>
+</div>
+
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- PAGE: LIVE DEMO                                                 -->
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<div class="page" id="page-demo">
+  <div class="sec-hd">
+    <div class="sec-eyebrow">Interactive Demonstration</div>
+    <div class="sec-title">EdgeResilience Lifecycle</div>
+    <div class="sec-sub">Step through the deterministic three-cycle scenario &mdash; all values from validated V4 runtime</div>
+  </div>
+
+  <!-- DEMO CONTROLS -->
+  <div class="demo-controls">
+    <button class="btn btn-primary" onclick="stepDemo()" id="btn-step" aria-label="Advance to next cycle">&#9654; Next Cycle</button>
+    <button class="btn btn-ghost btn-sm" onclick="autoPlay()" id="btn-auto" aria-label="Auto play demo">&#9654;&#9654; Auto Play</button>
+    <button class="btn btn-ghost btn-sm" onclick="resetDemo()" aria-label="Reset demo">&#8635; Reset</button>
+    <span class="demo-step-info" id="demo-step-label" aria-live="polite">Press <strong style="color:var(--accent)">Next Cycle</strong> to begin</span>
+  </div>
+
+  <!-- WOW MOMENT: LIFECYCLE ORCHESTRATION -->
+  <div class="g12" style="margin-bottom:16px">
+    <!-- STATE MACHINE -->
+    <div class="card">
+      <div class="card-hd">Resilience State Machine</div>
+      <div class="sm-wrap" id="demo-sm">
+        <div class="sm-node" id="sm-observe">
+          <div class="sm-dot" id="sm-dot-observe">&#128225;</div>
+          <div class="sm-body">
+            <div class="sm-title">Observe</div>
+            <div class="sm-desc">17 cyber features &times; 12 temporal steps</div>
+            <div class="sm-activity" id="sm-act-observe"></div>
+          </div>
+        </div>
+        <div class="sm-node" id="sm-predict">
+          <div class="sm-dot" id="sm-dot-predict">&#9672;</div>
+          <div class="sm-body">
+            <div class="sm-title">Predict</div>
+            <div class="sm-desc">V4 Temporal Transformer inference</div>
+            <div class="sm-activity" id="sm-act-predict"></div>
+          </div>
+        </div>
+        <div class="sm-node" id="sm-assess">
+          <div class="sm-dot" id="sm-dot-assess">&#9673;</div>
+          <div class="sm-body">
+            <div class="sm-title">Assess</div>
+            <div class="sm-desc">Deterministic risk interpretation</div>
+            <div class="sm-activity" id="sm-act-assess"></div>
+          </div>
+        </div>
+        <div class="sm-node" id="sm-respond">
+          <div class="sm-dot" id="sm-dot-respond">&#8635;</div>
+          <div class="sm-body">
+            <div class="sm-title">Respond</div>
+            <div class="sm-desc">Connectivity evaluation &amp; local resilience</div>
+            <div class="sm-activity" id="sm-act-respond"></div>
+          </div>
+        </div>
+        <div class="sm-node" id="sm-preserve">
+          <div class="sm-dot" id="sm-dot-preserve">&#8801;</div>
+          <div class="sm-body">
+            <div class="sm-title">Preserve</div>
+            <div class="sm-desc">SHA-256 evidence buffering</div>
+            <div class="sm-activity" id="sm-act-preserve"></div>
+          </div>
+        </div>
+        <div class="sm-node" id="sm-recover">
+          <div class="sm-dot" id="sm-dot-recover">&#8593;</div>
+          <div class="sm-body">
+            <div class="sm-title">Recover</div>
+            <div class="sm-desc">Recovery detection &amp; sync manifest</div>
+            <div class="sm-activity" id="sm-act-recover"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIVE CYCLE SPOTLIGHT -->
+    <div>
+      <div class="card" style="margin-bottom:14px" id="demo-spotlight">
+        <div class="card-hd">Active Cycle</div>
+        <div style="color:var(--text3);font-size:12.5px">Press <strong style="color:var(--accent)">Next Cycle</strong> to begin the demonstration.</div>
+      </div>
+
+      <!-- STATE TRANSITION -->
+      <div id="demo-transition" style="display:none;margin-bottom:14px">
+        <div style="font-size:9.5px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px">State Transition</div>
+        <div style="display:grid;grid-template-columns:1fr 32px 1fr;align-items:center">
+          <div id="demo-prev-state" style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--r8) 0 0 var(--r8);padding:12px 14px"></div>
+          <div style="background:var(--surface2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;height:100%;font-size:16px;color:var(--accent)">&#8594;</div>
+          <div id="demo-curr-state" style="background:var(--accent-dim);border:1px solid var(--accent);border-radius:0 var(--r8) var(--r8) 0;padding:12px 14px"></div>
+        </div>
+      </div>
+
+      <!-- ALL CYCLES -->
+      <div class="card">
+        <div class="card-hd">All Cycles</div>
+        <div id="demo-all-cycles"><div class="loading"><div class="spinner"></div>Loading&hellip;</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEMO CONCLUSION (shown after all cycles) -->
+  <div id="demo-conclusion" style="display:none">
+    <div style="background:linear-gradient(135deg,rgba(52,211,153,.06),rgba(56,189,248,.06));border:1px solid var(--good-border);border-radius:var(--r12);padding:22px 26px;text-align:center">
+      <div style="font-size:22px;margin-bottom:12px">&#10003;</div>
+      <div style="font-size:16px;font-weight:800;color:var(--good);margin-bottom:12px">Demonstration Complete</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;max-width:700px;margin:0 auto">
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r8);padding:12px;font-size:12px;color:var(--text2)">&#9672; Prediction continued through all connectivity states</div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r8);padding:12px;font-size:12px;color:var(--text2)">&#8635; Local resilience remained active during disconnection</div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r8);padding:12px;font-size:12px;color:var(--text2)">&#8801; Evidence was preserved with SHA-256 integrity</div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r8);padding:12px;font-size:12px;color:var(--text2)">&#8593; Synchronization manifest became ready on recovery</div>
+      </div>
+    </div>
+  </div>
+</div>

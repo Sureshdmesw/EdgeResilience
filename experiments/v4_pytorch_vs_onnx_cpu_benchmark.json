@@ -1,0 +1,26 @@
+{
+  "experiment": "V4 PyTorch vs ONNX Runtime CPU batch-1 benchmark",
+  "status": "PASS",
+  "samples": 100,
+  "warmup_runs_per_sample": 20,
+  "benchmark_runs_per_sample": 100,
+  "input_shape": [
+    1,
+    12,
+    17
+  ],
+  "pytorch": {
+    "mean_latency_ms": 1.655850230017677,
+    "median_latency_ms": 1.615249499964193,
+    "p95_latency_ms": 1.9575973499240718
+  },
+  "onnxruntime_cpu": {
+    "mean_latency_ms": 0.27660376000749237,
+    "median_latency_ms": 0.27630200002931815,
+    "p95_latency_ms": 0.28689505003967497
+  },
+  "onnx_mean_latency_speedup": 5.986361971264689,
+  "hardware_verified": false,
+  "accelerator_verified": false,
+  "notes": "Batch-1 CPU reference/interoperability benchmark. No Snapdragon or Qualcomm accelerator performance is claimed."
+}

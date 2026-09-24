@@ -1,0 +1,29 @@
+﻿{
+  "artifact": "EdgeResilience V4 Encoder Block 1 Exact HTP Profile",
+  "classification": "new EdgeResilience artifact",
+  "test_type": "Snapdragon QNN/HTP profile",
+  "source_model": "models/edgeresilience/snapdragon/v4_encoder_block1_qnn_control.onnx",
+  "compile_job": "jp4y18y8p",
+  "compiled_target_model": "mmrgw03wq",
+  "profile_job": "jp8ex8ekp",
+  "device": "Snapdragon X Elite CRD",
+  "device_os": "Windows 11",
+  "chipset": "SC8380XP",
+  "hexagon_architecture": "v73",
+  "execution_provider": "QNN",
+  "compute_unit": "NPU",
+  "npu_layers": 41,
+  "estimated_inference_time_ms": 0.045,
+  "estimated_inference_peak_memory_mib": 27.84765625,
+  "first_load_time_ms": 2.7807,
+  "warm_load_time_ms": 0.549971,
+  "profile_status": "SUCCESS",
+  "raw_profile_artifact": "experiments/snapdragon/profile_artifacts/v4_encoder_block1/EdgeResilience V4 Encoder Block 1 Exact HTP Profile_jp8ex8ekp_results.json",
+  "raw_profile_sha256": "99F57797D57F64779C7CC7CE3CC109D5556337C70D069175AFAA6BFD4DF2946B",
+  "safety_boundary": {
+    "physical_vehicle": false,
+    "external_can_transmission": false,
+    "direct_actuation": false,
+    "production_vehicle_connection": false
+  }
+}

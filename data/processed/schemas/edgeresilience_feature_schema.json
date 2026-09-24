@@ -1,0 +1,55 @@
+﻿{
+  "schema_name": "edgeresilience_feature_contract",
+  "schema_version": "0.1.0",
+  "status": "design",
+  "vehicle_feature_count": 59,
+  "cyber_feature_count": 17,
+  "operational_feature_count": 7,
+  "initial_total_feature_count": 83,
+  "observation_steps": 12,
+  "prediction_targets": [
+    "y3",
+    "y6"
+  ],
+  "cyber_features": [
+    "cyber_message_rate",
+    "cyber_unique_can_id_count",
+    "cyber_can_id_entropy",
+    "cyber_mean_interarrival_ms",
+    "cyber_std_interarrival_ms",
+    "cyber_min_interarrival_ms",
+    "cyber_max_interarrival_ms",
+    "cyber_interarrival_cv",
+    "cyber_payload_change_rate",
+    "cyber_mean_hamming_distance",
+    "cyber_dlc_change_rate",
+    "cyber_dominant_can_id_fraction",
+    "cyber_burst_score",
+    "cyber_timing_anomaly_score",
+    "cyber_payload_anomaly_score",
+    "cyber_id_anomaly_score",
+    "cyber_attack_score"
+  ],
+  "operational_features": [
+    "network_latency_ms",
+    "packet_loss_rate",
+    "heartbeat_failure",
+    "rssi_dbm",
+    "telemetry_gap_duration_ms",
+    "sensor_plausibility_score",
+    "integrity_score"
+  ],
+  "provenance": {
+    "vehicle_state": "inherited_reference_59_feature_contract",
+    "cyber_state": "new_edgeresilience_feature_design",
+    "operational_state": "new_edgeresilience_feature_design"
+  },
+  "safety": {
+    "physical_vehicle_testing": false,
+    "external_can_transmission": false,
+    "direct_actuation": false
+  },
+  "snapdragon_validation": {
+    "verified": false
+  }
+}

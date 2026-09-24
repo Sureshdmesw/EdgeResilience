@@ -1,0 +1,22 @@
+{
+  "job_id": "jp3z9xmx5",
+  "artifact": "QHAS",
+  "htp": 0,
+  "percent_idle": 2.780699573524068,
+  "percent_utilization": 97.21930042647593,
+  "time_us": 251,
+  "graph_execute_us": 40,
+  "inferences_per_second": 3984.06374501992,
+  "timeline_cycles": 52289,
+  "total_dram_read_bytes": 73728,
+  "total_dram_write_bytes": 2048,
+  "total_dram_bytes": 75776,
+  "peak_vtcm_alloc_bytes": 114688,
+  "total_vtcm_read_bytes": 251904,
+  "total_vtcm_write_bytes": 202752,
+  "total_vtcm_bytes": 454656,
+  "unique_qnn_ops": 14,
+  "qnn_nodes": 20,
+  "unique_htp_ops": 14,
+  "htp_nodes": 68
+}

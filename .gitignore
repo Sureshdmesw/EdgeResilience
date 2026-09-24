@@ -1,0 +1,120 @@
+# ============================================================
+# EdgeResilience
+# Snapdragon-Powered Predictive Intelligence for
+# Connected Vehicle Safety
+# ============================================================
+
+# ------------------------------------------------------------
+# Python
+# ------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ------------------------------------------------------------
+# IDE / OS
+# ------------------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ------------------------------------------------------------
+# Logs / temporary files
+# ------------------------------------------------------------
+*.log
+*.tmp
+*.bak
+*.swp
+
+# ------------------------------------------------------------
+# Raw datasets
+# ------------------------------------------------------------
+data/raw/
+
+# ------------------------------------------------------------
+# Large generated datasets
+# ------------------------------------------------------------
+data/processed/**/*.npy
+data/processed/**/*.npz
+data/processed/**/*.parquet
+
+# ------------------------------------------------------------
+# Large generated telemetry
+# Keep compact evidence summaries tracked deliberately.
+# ------------------------------------------------------------
+data/processed/**/telemetry_*.csv
+data/processed/**/generated_*.csv
+
+# ------------------------------------------------------------
+# Large model artifacts
+# Do NOT automatically ignore all models.
+# Individual models will be classified deliberately.
+# ------------------------------------------------------------
+
+# ------------------------------------------------------------
+# Inherited project
+#
+# The previous project is reference material and must remain
+# isolated from the EdgeResilience Git history.
+# ------------------------------------------------------------
+inherited/
+
+# ------------------------------------------------------------
+# Local benchmark/runtime output
+# ------------------------------------------------------------
+benchmarks/output/
+demo/output/
+
+# ------------------------------------------------------------
+# Local secrets/configuration
+# ------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# ------------------------------------------------------------
+# Jupyter
+# ------------------------------------------------------------
+.ipynb_checkpoints/
+
+# ------------------------------------------------------------
+# OS-generated files
+# ------------------------------------------------------------
+desktop.ini
+
+# ------------------------------------------------------------
+# EdgeResilience intermediate temporal datasets
+# V4 is the authoritative validated dataset.
+# ------------------------------------------------------------
+data/processed/temporal/edgeresilience_temporal_dataset.jsonl
+data/processed/temporal/edgeresilience_temporal_dataset_v2.jsonl
+data/processed/temporal/edgeresilience_temporal_dataset_v3.jsonl
+data/processed/temporal/edgeresilience_temporal_dataset_manifest.json
+data/processed/temporal/edgeresilience_temporal_dataset_v2_manifest.json
+data/processed/temporal/edgeresilience_temporal_dataset_v3_manifest.json
+
+# ------------------------------------------------------------
+# Intermediate baseline models
+# V4 Transformer is the authoritative EdgeResilience model.
+# ------------------------------------------------------------
+models/edgeresilience/temporal_rf_baseline_v*.joblib
+models/edgeresilience/temporal_rf_baseline_v*_report.json
+
+# ------------------------------------------------------------
+# Local scratch / QA artifacts
+# ------------------------------------------------------------
+tmp_chunk*.txt
+tmp_qa.txt
+server_log.txt
+dashboard_test.log
+
+src/dashboard/_test.txt

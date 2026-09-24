@@ -1,0 +1,37 @@
+{
+  "artifact": "temporal_predictor_v4_dynamic.onnx",
+  "input_shape": [
+    "batch",
+    12,
+    17
+  ],
+  "output_shape": [
+    "batch"
+  ],
+  "provider": "CPUExecutionProvider",
+  "batch_tests": [
+    {
+      "batch_size": 1,
+      "max_absolute_error": 4.377216100692749e-08,
+      "mean_absolute_error": 4.377216100692749e-08,
+      "rmse": 4.377216100692749e-08
+    },
+    {
+      "batch_size": 4,
+      "max_absolute_error": 3.5390257835388184e-08,
+      "mean_absolute_error": 1.257285475730896e-08,
+      "rmse": 1.8238235810486003e-08
+    },
+    {
+      "batch_size": 16,
+      "max_absolute_error": 5.960464477539063e-08,
+      "mean_absolute_error": 2.2439053282141685e-08,
+      "rmse": 2.8094710557979852e-08
+    }
+  ],
+  "max_absolute_error": 5.960464477539063e-08,
+  "equivalence_threshold": 1e-05,
+  "equivalence_status": "PASS",
+  "snapdragon_hardware_verified": false,
+  "qualcomm_qnn_verified": false
+}

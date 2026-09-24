@@ -1,0 +1,79 @@
+{
+  "project": "EdgeResilience",
+  "artifact": "qnn_environment_report",
+  "generated_utc": "2026-09-20T10:54:27.556695+00:00",
+  "phase": "PHASE_3_QUALCOMM_QNN_DISCOVERY",
+  "qnn_python_packages": {
+    "qai_hub": {
+      "installed": false,
+      "error": "No module named 'qai_hub'"
+    },
+    "qai_hub_models": {
+      "installed": false,
+      "error": "No module named 'qai_hub_models'"
+    },
+    "onnxruntime_qnn": {
+      "installed": false,
+      "error": "No module named 'onnxruntime_qnn'"
+    },
+    "qnn_wrapper": {
+      "installed": false,
+      "error": "No module named 'qnn_wrapper'"
+    },
+    "qualcomm_ai_engine_direct": {
+      "installed": false,
+      "error": "No module named 'qualcomm_ai_engine_direct'"
+    },
+    "qnn": {
+      "installed": false,
+      "error": "No module named 'qnn'"
+    },
+    "qairt": {
+      "installed": false,
+      "error": "No module named 'qairt'"
+    }
+  },
+  "qnn_environment_variables": {
+    "QNN_SDK_ROOT": "NOT_SET",
+    "QUALCOMM_SDK": "NOT_SET",
+    "HEXAGON_SDK_ROOT": "NOT_SET",
+    "QAIRT_SDK_ROOT": "NOT_SET",
+    "QAI_HUB_API_TOKEN": "NOT_SET",
+    "QNN_TARGET_ARCH": "NOT_SET",
+    "QNN_TOOLS_ROOT": "NOT_SET"
+  },
+  "qnn_sdk_directories": {
+    "C:\\Program Files\\Qualcomm": "False",
+    "C:\\Program Files (x86)\\Qualcomm": "False",
+    "C:\\Qualcomm": "False",
+    "C:\\QNN": "False",
+    "C:\\QAIRT": "False"
+  },
+  "qnn_system32_dlls": {
+    "QnnCpu.dll": false,
+    "QnnGpu.dll": false,
+    "QnnHtp.dll": false,
+    "QnnHtpV73Stub.dll": false,
+    "QnnSaver.dll": false,
+    "QnnSystem.dll": false,
+    "libQnnCpu.so": false,
+    "libQnnHtp.so": false
+  },
+  "onnxruntime_providers": [
+    "AzureExecutionProvider",
+    "CPUExecutionProvider"
+  ],
+  "qnn_execution_provider_present": false,
+  "qnn_available": false,
+  "qnn_status": "NOT VERIFIED",
+  "conclusion": {
+    "qnn_sdk_installed": false,
+    "qnn_runtime_available": false,
+    "qnn_ort_provider_available": false,
+    "qnn_cpu_backend": "NOT VERIFIED",
+    "qnn_gpu_backend": "NOT VERIFIED",
+    "qnn_htp_npu_backend": "NOT VERIFIED",
+    "blocker": "No Qualcomm QNN components found. No QNN Python packages, no QNN SDK directories, no QNN environment variables, no QNN DLLs in System32, and no QNNExecutionProvider in ONNX Runtime. QNN requires the Qualcomm AI Engine Direct SDK installed on a Snapdragon-equipped device.",
+    "note": "CPUExecutionProvider is NOT equivalent to QNNExecutionProvider. AzureExecutionProvider is NOT equivalent to QNNExecutionProvider. ONNX model existence is NOT evidence of QNN execution. Low inference latency is NOT evidence of NPU execution."
+  }
+}

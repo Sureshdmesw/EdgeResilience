@@ -1,0 +1,16 @@
+{
+  "artifact": "temporal_predictor_v4.onnx",
+  "source_model": "temporal_predictor_v4.pt",
+  "input_shape": [
+    1,
+    12,
+    17
+  ],
+  "output_shape": [
+    1
+  ],
+  "opset": 17,
+  "export_status": "PASS",
+  "snapdragon_hardware_verified": false,
+  "qualcomm_qnn_verified": false
+}

@@ -1,0 +1,119 @@
+{
+  "project": "EdgeResilience",
+  "artifact": "V4 model-backed software demonstration",
+  "model": {
+    "name": "EdgeResilience_V4_TemporalPredictor",
+    "checkpoint": "E:\\EdgeResilience\\models\\edgeresilience\\temporal_predictor_v4.pt",
+    "feature_count": 17,
+    "observation_steps": 12,
+    "target": "future_degradation"
+  },
+  "policy": {
+    "name": "V4_DEGRADATION_DEMO_POLICY_V1",
+    "type": "deterministic interpretation",
+    "learned_thresholds": false,
+    "vehicle_safety_limits": false,
+    "snapdragon_hardware_limits": false
+  },
+  "safety_boundary": {
+    "test_type": "software_simulation",
+    "physical_vehicle": false,
+    "external_can_transmission": false,
+    "direct_actuation": false,
+    "production_vehicle_connection": false
+  },
+  "cycles": [
+    {
+      "cycle_id": "cycle-001",
+      "label": "Predictive warning / connected",
+      "prediction": {
+        "predicted_future_degradation": 0.03385656327009201,
+        "model_name": "EdgeResilience_V4_TemporalPredictor",
+        "model_source": "E:\\EdgeResilience\\models\\edgeresilience\\temporal_predictor_v4.pt",
+        "feature_count": 17,
+        "observation_steps": 12
+      },
+      "risk": {
+        "future_degradation": 0.03385656327009201,
+        "predictive_risk_level": "LOW",
+        "evidence_required": false,
+        "reason_codes": [
+          "V4_PREDICTED_DEGRADATION_LOW"
+        ],
+        "policy_name": "V4_DEGRADATION_DEMO_POLICY_V1"
+      },
+      "connectivity_state": "CONNECTED",
+      "local_inference_allowed": true,
+      "local_buffering_required": false,
+      "synchronization_allowed": true,
+      "recovery_detected": false,
+      "synchronization_ready": false,
+      "evidence_count": 0,
+      "reason_codes": [
+        "V4_PREDICTED_DEGRADATION_LOW",
+        "CONNECTIVITY_NOMINAL"
+      ]
+    },
+    {
+      "cycle_id": "cycle-002",
+      "label": "Connectivity loss / local resilience",
+      "prediction": {
+        "predicted_future_degradation": 0.0031414784025400877,
+        "model_name": "EdgeResilience_V4_TemporalPredictor",
+        "model_source": "E:\\EdgeResilience\\models\\edgeresilience\\temporal_predictor_v4.pt",
+        "feature_count": 17,
+        "observation_steps": 12
+      },
+      "risk": {
+        "future_degradation": 0.0031414784025400877,
+        "predictive_risk_level": "NORMAL",
+        "evidence_required": false,
+        "reason_codes": [],
+        "policy_name": "V4_DEGRADATION_DEMO_POLICY_V1"
+      },
+      "connectivity_state": "DISCONNECTED",
+      "local_inference_allowed": true,
+      "local_buffering_required": true,
+      "synchronization_allowed": false,
+      "recovery_detected": false,
+      "synchronization_ready": false,
+      "evidence_count": 1,
+      "reason_codes": [
+        "CONNECTIVITY_LOSS_LOCAL_CONTINUITY"
+      ]
+    },
+    {
+      "cycle_id": "cycle-003",
+      "label": "Connectivity recovery / synchronization",
+      "prediction": {
+        "predicted_future_degradation": 0.0435609370470047,
+        "model_name": "EdgeResilience_V4_TemporalPredictor",
+        "model_source": "E:\\EdgeResilience\\models\\edgeresilience\\temporal_predictor_v4.pt",
+        "feature_count": 17,
+        "observation_steps": 12
+      },
+      "risk": {
+        "future_degradation": 0.0435609370470047,
+        "predictive_risk_level": "MEDIUM",
+        "evidence_required": true,
+        "reason_codes": [
+          "V4_PREDICTED_DEGRADATION_MEDIUM"
+        ],
+        "policy_name": "V4_DEGRADATION_DEMO_POLICY_V1"
+      },
+      "connectivity_state": "CONNECTED",
+      "local_inference_allowed": true,
+      "local_buffering_required": false,
+      "synchronization_allowed": true,
+      "recovery_detected": true,
+      "synchronization_ready": true,
+      "evidence_count": 2,
+      "reason_codes": [
+        "V4_PREDICTED_DEGRADATION_MEDIUM",
+        "CONNECTIVITY_NOMINAL",
+        "CONNECTIVITY_RECOVERY_DETECTED",
+        "SYNCHRONIZATION_READY"
+      ]
+    }
+  ]
+}

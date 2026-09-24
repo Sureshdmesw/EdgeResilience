@@ -1,0 +1,23 @@
+{
+  "experiment": "V4 PyTorch ONNX numerical equivalence",
+  "status": "PASS",
+  "samples": 100,
+  "input_shape": [
+    1,
+    12,
+    17
+  ],
+  "max_absolute_error": 7.450580596923828e-08,
+  "mean_absolute_error": 2.3900065926341085e-08,
+  "rmse": 2.9030246651018388e-08,
+  "tolerance_max_absolute_error": 0.0001,
+  "tolerance_mean_absolute_error": 1e-05,
+  "onnx_input_shape": [
+    1,
+    12,
+    17
+  ],
+  "onnxruntime_provider": "CPUExecutionProvider",
+  "snapdragon_hardware_verified": false,
+  "qualcomm_qnn_verified": false
+}

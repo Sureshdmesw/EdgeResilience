@@ -1,0 +1,55 @@
+﻿import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+
+report = {
+    "experiment": "V4 neural ablation",
+    "status": "PASS",
+    "dataset": "edgeresilience_temporal_dataset_v4.jsonl",
+    "seed": 42,
+    "train_test_split": "80/20",
+    "validation_split_from_train_pool": "80/20",
+    "results": [
+        {
+            "input": "final_timestep",
+            "mae": 0.0067,
+            "rmse": 0.0086
+        },
+        {
+            "input": "final_plus_delta_plus_std",
+            "mae": 0.0053,
+            "rmse": 0.0068
+        },
+        {
+            "input": "full_12_step_sequence",
+            "mae": 0.0052,
+            "rmse": 0.0066
+        }
+    ],
+    "interpretation": [
+        "Temporal trajectory information improves neural prediction relative to final-timestep-only input.",
+        "The compact final-plus-delta-plus-std representation is close to the full-sequence neural result.",
+        "The full-sequence Transformer is currently the strongest neural configuration tested.",
+        "RF temporal baselines remain slightly better than the tested Transformer and remain the current non-neural reference.",
+        "This experiment uses synthetic V4 data and is not physical vehicle validation.",
+        "Snapdragon hardware performance has not yet been measured."
+    ]
+}
+
+path = (
+    ROOT
+    / "experiments"
+    / "v4_neural_ablation_report.json"
+)
+
+path.write_text(
+    json.dumps(
+        report,
+        indent=2
+    ),
+    encoding="utf-8"
+)
+
+print(f"Created: {path}")
+print("V4_NEURAL_ABLATION_EVIDENCE = PASS")

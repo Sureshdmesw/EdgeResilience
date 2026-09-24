@@ -1,0 +1,19 @@
+{
+  "artifact": "temporal_predictor_v4_dynamic.onnx",
+  "source_model": "temporal_predictor_v4.pt",
+  "input_shape": [
+    "batch",
+    12,
+    17
+  ],
+  "output_shape": [
+    "batch"
+  ],
+  "opset": 17,
+  "dynamo": false,
+  "dynamic_batch_requested": true,
+  "export_status": "PASS",
+  "dynamic_batch_equivalence": "PASS",
+  "snapdragon_hardware_verified": false,
+  "qualcomm_qnn_verified": false
+}

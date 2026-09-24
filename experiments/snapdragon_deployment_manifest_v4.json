@@ -1,0 +1,79 @@
+{
+  "project": "EdgeResilience",
+  "artifact_type": "snapdragon_deployment_manifest",
+  "model_path": "models\\edgeresilience\\temporal_predictor_v4.pt",
+  "model_format": "pytorch",
+  "input_shape": [
+    1,
+    12,
+    17
+  ],
+  "output_shape": [
+    1
+  ],
+  "backends": [
+    {
+      "name": "cpu_reference",
+      "verified": true
+    },
+    {
+      "name": "onnx",
+      "verified": true
+    },
+    {
+      "name": "qualcomm_qnn",
+      "verified": true,
+      "scope": "component_level",
+      "full_model_verified": false
+    }
+  ],
+  "snapdragon_hardware": {
+    "verified": true,
+    "scope": "component_level",
+    "device": "Snapdragon X Elite CRD",
+    "os": "Windows 11",
+    "soc": "SC8380XP",
+    "chipset": "qualcomm-snapdragon-x-elite",
+    "accelerator": "Qualcomm QNN / HTP",
+    "hexagon": "v73",
+    "hp_branded_pc_verified": false
+  },
+  "full_model": {
+    "compile_verified": true,
+    "compile_job": "jgdd3v6zg",
+    "htp_verified": false,
+    "htp_profile_job": "j5wl79zmp",
+    "htp_failure": "QNN graph finalization failed with error code 6000"
+  },
+  "verified_components": [
+    {
+      "name": "Encoder Block 1",
+      "htp_verified": true,
+      "profile_job": "jp8ex8ekp",
+      "inference_ms": 0.045,
+      "npu_layers": 41
+    },
+    {
+      "name": "Encoder Block 2",
+      "htp_verified": true,
+      "profile_job": "j5qlywoep",
+      "inference_ms": 0.042,
+      "npu_layers": 40
+    },
+    {
+      "name": "Temporal Pooling",
+      "htp_verified": true,
+      "profile_job": "jp8ex6yqp",
+      "inference_ms": 0.038,
+      "load_ms": 493.242,
+      "peak_memory_mib": 28.328125,
+      "npu_layers": 24
+    },
+    {
+      "name": "Prediction Head",
+      "htp_verified": true,
+      "profile_job": "jgk24dlog"
+    }
+  ],
+  "status": "SNAPDRAGON_COMPONENT_LEVEL_VALIDATED_FULL_MODEL_HTP_NOT_VERIFIED"
+}
