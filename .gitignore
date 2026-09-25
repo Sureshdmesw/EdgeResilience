@@ -118,3 +118,10 @@ server_log.txt
 dashboard_test.log
 
 src/dashboard/_test.txt
+
+# Original YOLOv11 training checkpoint - not required for submission
+yolo11n.pt
+
+# Competition submission package - uploaded separately
+submission_package/
+EdgeResilience_Submission_2026.zip

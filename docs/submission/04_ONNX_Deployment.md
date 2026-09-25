@@ -102,7 +102,7 @@ model is well-suited for further acceleration on Snapdragon.
 | ONNX Runtime (CPU) | VERIFIED | ~5.88× vs PyTorch, CPU-to-CPU |
 | Qualcomm QNN / HTP | VERIFIED — COMPONENT / WORKLOAD | Snapdragon X Elite CRD |
 | Snapdragon X Elite | VERIFIED — COMPONENT / WORKLOAD | Validated V4 workload |
-| HTP profiling | VERIFIED | 97.22% HTP utilization |
+| HTP profiling | VERIFIED | AI Hub: 6.876 ms estimated inference; NPU / HTP execution |
 | Full CPU ↔ Snapdragon numerical equivalence | NOT VERIFIED | Current investigation |
 
 Overall: **CPU_ONNX_VERIFIED_SNAPDRAGON_COMPONENT_WORKLOAD_VERIFIED**

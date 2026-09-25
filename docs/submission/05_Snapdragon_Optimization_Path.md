@@ -132,16 +132,15 @@ model. It is designed for inference efficiency.
 
 ---
 
-## Expected Snapdragon Benefits (Unverified)
+## Snapdragon Benefits and Remaining Measurements
 
-The following are **expected** benefits based on Snapdragon NPU
-architecture and model characteristics. They are NOT measured values.
+The following deployment benefits are supported by the Snapdragon X Elite profiling evidence where explicitly measured. Power, thermal behavior, and comparative throughput remain unmeasured in the current evidence.
 
 | Metric | Expected direction | Basis |
 |---|---|---|
 | Inference latency | Lower than CPU | NPU hardware acceleration |
-| Power consumption | Lower than CPU | NPU power efficiency |
-| Thermal behavior | Better than CPU | NPU thermal design |
+| Power consumption | NOT MEASURED | Project-specific power measurement pending |
+| Thermal behavior | NOT MEASURED | Project-specific thermal measurement pending |
 | Throughput | Higher than CPU | NPU parallelism |
 
 **None of these are claimed as verified results.**
@@ -165,10 +164,7 @@ This statement is strong, precise, and fully defensible.
 
 ## Remaining Validation Work
 
-The Snapdragon X Elite CRD has already provided component/workload-level
-execution and profiling evidence. The remaining technical work is to
-resolve CPU-to-Snapdragon numerical divergence for the complete production
-V4 graph before making a full end-to-end numerical-equivalence claim.
+The Snapdragon X Elite CRD has provided Qualcomm AI Hub compile and profiling evidence for the optimized YOLOv11 workload, including successful NPU/HTP execution and profiled inference. The remaining technical work is to resolve CPU-to-Snapdragon numerical divergence for the complete production inference path before making a full end-to-end numerical-equivalence claim.
 
 1. Preserve the Qualcomm AI Hub compile, inference, and profiling evidence already generated.
 2. Complete operator-level investigation of CPU-to-Snapdragon numerical divergence.
@@ -182,3 +178,19 @@ The current status is:
 
 Full CPU-to-Snapdragon numerical equivalence remains unverified.
 Operator-level investigation is in progress.
+
+## Snapdragon-powered HP PC Edge AI Deployment
+
+**Platform positioning:** EdgeResilience is designed for deployment on **Snapdragon-powered HP PCs**, using Snapdragon X Elite-class edge compute and Qualcomm AI Hub / QNN optimization for AI inference acceleration.
+
+**Deployment concept:**
+
+HP Snapdragon-powered PC
+? Snapdragon X Elite
+? Qualcomm AI Hub / QNN
+? Snapdragon NPU / HTP
+? EdgeResilience local AI inference
+? Detection / Prediction / Containment / Forensic Buffer
+? Secure SOC synchronization
+
+The current Qualcomm AI Hub evidence validates the optimized model on a **Snapdragon X Elite CRD**. This is evidence of Snapdragon-targeted optimization and NPU/HTP execution, while physical deployment on a specific HP Snapdragon PC remains an intended deployment target unless separately measured on that HP device.

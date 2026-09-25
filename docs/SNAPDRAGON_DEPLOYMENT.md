@@ -1,4 +1,4 @@
-# EdgeResilience — Snapdragon Deployment Documentation
+# EdgeResilience â€” Snapdragon Deployment Documentation
 
 **Status:** CPU_ONNX_VERIFIED_SNAPDRAGON_COMPONENT_WORKLOAD_VERIFIED
 **Deployment Validation:** See docs/snapdragon/SNAPDRAGON_VALIDATION_REPORT.md
@@ -9,7 +9,7 @@
 
 The EdgeResilience V4 temporal predictor has been validated on CPU and
 exported to ONNX. A QNN-ready ONNX derivative has been prepared with
-constant folding applied (Mod operator eliminated, 336→176 nodes, all
+constant folding applied (Mod operator eliminated, 336â†’176 nodes, all
 standard ONNX opset 17 operators). The derivative is numerically
 equivalent to the source ONNX (max error = 0.0 over 200 samples).
 
@@ -37,7 +37,7 @@ QNNExecutionProvider.
 
 ---
 
-## CPU Reference — VERIFIED
+## CPU Reference â€” VERIFIED
 
 | Metric | Value |
 |---|---|
@@ -54,7 +54,7 @@ Source: experiments/cpu_reference_benchmark_v4.json
 
 ---
 
-## ONNX Runtime CPU — VERIFIED
+## ONNX Runtime CPU â€” VERIFIED
 
 | Metric | Value |
 |---|---|
@@ -78,7 +78,7 @@ Source: experiments/v4_pytorch_vs_onnx_cpu_benchmark.json
 
 ---
 
-## Dynamic ONNX Numerical Equivalence — VERIFIED
+## Dynamic ONNX Numerical Equivalence â€” VERIFIED
 
 | Batch size | Max absolute error | Threshold | Result |
 |---|---|---|---|
@@ -90,7 +90,7 @@ Source: experiments/v4_dynamic_onnx_equivalence_report.json
 
 ---
 
-## QNN-Ready Derivative — VERIFIED (Software)
+## QNN-Ready Derivative â€” VERIFIED (Software)
 
 | Property | Value |
 |---|---|
@@ -99,27 +99,27 @@ Source: experiments/v4_dynamic_onnx_equivalence_report.json
 | Derivative | models/edgeresilience/snapdragon/temporal_predictor_v4_qnn_ready.onnx |
 | Derivative SHA256 | E2B22D8A872F1AFEF2CFD34FDE11295EC69F2BC3C4324402F284EC4F6422A62E |
 | Provenance | ADAPTED via ORT_ENABLE_BASIC constant folding |
-| Mod nodes eliminated | YES (2 → 0) |
+| Mod nodes eliminated | YES (2 â†’ 0) |
 | Node count | 176 (was 336) |
-| Operators | All standard ONNX opset 17 — no ORT-internal fused ops |
+| Operators | All standard ONNX opset 17 â€” no ORT-internal fused ops |
 | Unsupported QNN ops | NONE |
 | ONNX checker | PASS |
-| Numerical equivalence | PASS — max error = 0.0 (200 samples) |
-| QNN execution | VERIFIED — Qualcomm QNN/HTP workload |
+| Numerical equivalence | PASS â€” max error = 0.0 (200 samples) |
+| QNN execution | VERIFIED â€” Qualcomm QNN/HTP workload |
 
 Source: experiments/snapdragon/qnn_ready_model_report.json
 
 ---
 
-## Qualcomm QNN / HTP — COMPONENT / WORKLOAD VERIFIED
+## Qualcomm QNN / HTP â€” COMPONENT / WORKLOAD VERIFIED
 
 | Property | Status |
 |---|---|
-| Qualcomm QNN / HTP compilation | VERIFIED — Qualcomm AI Hub |
+| Qualcomm QNN / HTP compilation | VERIFIED â€” Qualcomm AI Hub |
 | Snapdragon X Elite target | VERIFIED |
-| QNN / HTP execution | VERIFIED — validated workload |
+| QNN / HTP execution | VERIFIED â€” validated workload |
 | HTP profiling | VERIFIED |
-| Full CPU ↔ Snapdragon numerical equivalence | NOT VERIFIED |
+| Full CPU â†” Snapdragon numerical equivalence | NOT VERIFIED |
 
 The current evidence was generated through Qualcomm AI Hub and the
 Snapdragon X Elite CRD. The remaining validation work is:
@@ -135,21 +135,21 @@ Snapdragon X Elite CRD. The remaining validation work is:
 
 ---
 
-## Snapdragon Hardware — COMPONENT / WORKLOAD VERIFIED
+## Snapdragon Hardware â€” COMPONENT / WORKLOAD VERIFIED
 
 | Property | Status |
 |---|---|
 | Device | Snapdragon X Elite CRD |
 | SoC | Qualcomm SC8380XP |
 | Accelerator | Hexagon v73 / HTP |
-| HTP execution | VERIFIED — validated workload |
+| HTP execution | VERIFIED â€” validated workload |
 | HTP utilization | 97.22% |
-| Estimated inference time | 36 µs |
+| Estimated inference time | 36 Âµs |
 | Throughput | ~3,984 inferences/sec |
 | Peak inference memory | ~27.83 MiB |
 | Power consumption | NOT MEASURED |
 | Thermal behavior | NOT MEASURED |
-| Full CPU ↔ Snapdragon numerical equivalence | NOT VERIFIED |
+| Full CPU â†” Snapdragon numerical equivalence | NOT VERIFIED |
 
 The above Snapdragon measurements are workload-specific profiling results.
 They are not claims of complete vehicle-system latency, power, or thermal
@@ -165,10 +165,10 @@ The intended deployment path is:
 PyTorch checkpoint (VERIFIED)
         |
         v
-ONNX export (VERIFIED — dynamic batch, max error 5.96e-8)
+ONNX export (VERIFIED â€” dynamic batch, max error 5.96e-8)
         |
         v
-QNN-ready ONNX derivative (VERIFIED — Mod eliminated, max error 0.0)
+QNN-ready ONNX derivative (VERIFIED â€” Mod eliminated, max error 0.0)
         |
         v
 Qualcomm AI Hub QNN / HTP compilation (VERIFIED)
@@ -180,7 +180,7 @@ Snapdragon X Elite CRD workload execution (VERIFIED)
 HTP profiling (VERIFIED)
         |
         v
-Full CPU ↔ Snapdragon numerical equivalence (NOT VERIFIED)
+Full CPU â†” Snapdragon numerical equivalence (NOT VERIFIED)
         |
         v
 Vehicle deployment (NOT PERFORMED)
@@ -188,10 +188,10 @@ Vehicle deployment (NOT PERFORMED)
 
 ---
 
-## What Would Be Measured on Snapdragon
+## Snapdragon Measurements and Remaining Validation
 
-If Snapdragon hardware and QNN SDK become available, the following should
-be measured and documented:
+Snapdragon X Elite profiling has now been completed through Qualcomm AI Hub.
+The following measurements are established or remain to be completed:
 
 1. Device identification (SoC model, firmware version)
 2. SDK version (QNN SDK version, ONNX converter version)
@@ -199,8 +199,8 @@ be measured and documented:
 4. Batch-1 inference latency (mean, median, P95, P99)
 5. Throughput (inferences per second)
 6. Peak memory usage (MB)
-7. Power consumption (watts) — if measurement API available
-8. Thermal behavior — if measurement API available
+7. Power consumption (watts) â€” if measurement API available
+8. Thermal behavior â€” if measurement API available
 9. Numerical equivalence vs CPU reference (threshold 1e-5)
 10. Accuracy preservation (MAE/RMSE on V4 test set)
 
@@ -216,9 +216,9 @@ information and stored as separate EdgeResilience evidence artifacts.
 | CPU reference (PyTorch) | YES | Intel Core i5-1235U, 33,800 samples/sec |
 | ONNX Runtime (CPU) | YES | CPUExecutionProvider, ~5.99x vs PyTorch |
 | QNN-ready ONNX derivative | YES (software) | Mod eliminated, equiv PASS, awaits QNN SDK |
-| Qualcomm QNN / HTP | YES — component/workload | Snapdragon X Elite CRD |
-| Snapdragon X Elite | YES — component/workload | Qualcomm SC8380XP / HTP |
-| Full CPU ↔ Snapdragon equivalence | NO | Operator-level investigation ongoing |
+| Qualcomm QNN / HTP | YES â€” component/workload | Snapdragon X Elite CRD |
+| Snapdragon X Elite | YES â€” component/workload | Qualcomm SC8380XP / HTP |
+| Full CPU â†” Snapdragon equivalence | NO | Operator-level investigation ongoing |
 | GPU | NO | Not tested |
 
 ---
@@ -231,3 +231,19 @@ of which inference backend is used.
 
 Physical vehicle testing, external CAN transmission, and direct actuation
 are not performed on any backend.
+
+## Snapdragon-powered HP PC Edge AI Deployment
+
+**Platform positioning:** EdgeResilience is designed for deployment on **Snapdragon-powered HP PCs**, using Snapdragon X Elite-class edge compute and Qualcomm AI Hub / QNN optimization for AI inference acceleration.
+
+**Deployment concept:**
+
+HP Snapdragon-powered PC
+→ Snapdragon X Elite
+→ Qualcomm AI Hub / QNN
+→ Snapdragon NPU / HTP
+→ EdgeResilience local AI inference
+→ Detection / Prediction / Containment / Forensic Buffer
+→ Secure SOC synchronization
+
+The current Qualcomm AI Hub evidence validates the optimized model on a **Snapdragon X Elite CRD**. This is evidence of Snapdragon-targeted optimization and NPU/HTP execution, while physical deployment on a specific HP Snapdragon PC remains an intended deployment target unless separately measured on that HP device.

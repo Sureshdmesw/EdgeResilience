@@ -85,7 +85,7 @@ hoping to fit on a device.
 
 ### The use case narrative
 
-A Snapdragon-powered vehicle compute module runs EdgeResilience
+A Snapdragon-powered HP PC is the intended edge deployment platform for EdgeResilience
 continuously. When cyber telemetry indicates rising degradation, the
 system raises the risk level and begins buffering evidence. If the
 vehicle enters a dead zone and loses connectivity, inference continues

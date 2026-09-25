@@ -1,0 +1,7 @@
+# Binary ML/model artifacts
+*.onnx binary
+*.onnx.data binary
+*.h5 binary
+*.pt binary
+*.joblib binary
+*.zip binary
