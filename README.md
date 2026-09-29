@@ -1,9 +1,9 @@
-# EdgeResilience
+﻿# EdgeResilience
 
 ## Snapdragon-Powered Predictive Intelligence for Connected Vehicle Safety
 
 **Competition:** Qualcomm Snapdragon AI Lab Build and Present Challenge
-**Status:** Competition ready — V4 baseline + Snapdragon component/workload validation
+**Status:** Competition ready â€” V4 baseline + Snapdragon component/workload validation
 
 ---
 
@@ -17,9 +17,9 @@ preserved locally and synchronized when connectivity recovers.
 
 Three dimensions:
 
-1. **Predictive** — detect degradation before it becomes critical
-2. **Resilient** — maintain local intelligence when connectivity is lost
-3. **Auditable** — preserve tamper-evident evidence for post-event analysis
+1. **Predictive** â€” detect degradation before it becomes critical
+2. **Resilient** â€” maintain local intelligence when connectivity is lost
+3. **Auditable** â€” preserve tamper-evident evidence for post-event analysis
 
 ---
 
@@ -171,14 +171,14 @@ The dashboard displays the V4 demo scenario with:
 |---|---|
 | CPU reference (PyTorch) | VERIFIED |
 | ONNX Runtime (CPU) | VERIFIED |
-| Qualcomm QNN / HTP | VERIFIED — COMPONENT / WORKLOAD |
-| Snapdragon X Elite | VERIFIED — COMPONENT / WORKLOAD |
-| HTP profiling | VERIFIED — VALIDATED WORKLOAD |
-| Full CPU ↔ Snapdragon numerical equivalence | NOT VERIFIED |
+| Qualcomm QNN / HTP | VERIFIED â€” COMPONENT / WORKLOAD |
+| Snapdragon X Elite | VERIFIED â€” COMPONENT / WORKLOAD |
+| HTP profiling | VERIFIED â€” VALIDATED WORKLOAD |
+| Full CPU â†” Snapdragon numerical equivalence | NOT VERIFIED |
 
 Qualcomm QNN / HTP execution has been validated on a Snapdragon X Elite
 CRD for the tested V4 workload. The profiled workload achieved an estimated
-36 µs inference time and 97.22% HTP utilization.
+36 Âµs inference time and 97.22% HTP utilization.
 
 These are workload-specific measurements and are not full vehicle-system
 latency measurements. The ~5.99x ONNX speedup is a CPU-to-CPU measurement
@@ -244,10 +244,10 @@ EdgeResilience/
 
 ## Limitations
 
-1. V4 dataset is synthetic — not raw vehicle telemetry
-2. Risk thresholds are demonstration defaults — not certified safety limits
+1. V4 dataset is synthetic â€” not raw vehicle telemetry
+2. Risk thresholds are demonstration defaults â€” not certified safety limits
 3. Full CPU-to-Snapdragon numerical equivalence remains under investigation
-4. Synchronization is a software manifest — no real network transmission
+4. Synchronization is a software manifest â€” no real network transmission
 5. Single-vehicle scenario only
 
 ---
@@ -270,3 +270,4 @@ EdgeResilience has its own source code, models, datasets, evidence, and
 Git history. Inherited material is explicitly classified before any reuse.
 
 See [docs/provenance/PROVENANCE_REGISTER.md](docs/provenance/PROVENANCE_REGISTER.md).
+
