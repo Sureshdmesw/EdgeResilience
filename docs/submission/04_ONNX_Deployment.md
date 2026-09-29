@@ -70,7 +70,7 @@ The ONNX model is numerically equivalent to the PyTorch reference.
 |---|---|---|---|
 | PyTorch (CPU) | 1.570 ms | 1.254 ms | 4.558 ms |
 | ONNX Runtime (CPU) | 0.267 ms | 0.252 ms | 0.331 ms |
-| Speedup (mean) | **~5.88×** | — | — |
+| Speedup (mean) | **~5.99×** | — | — |
 
 **This is a CPU-to-CPU measurement on an Intel processor.**
 **This is NOT a Snapdragon result.**
@@ -99,7 +99,7 @@ model is well-suited for further acceleration on Snapdragon.
 | Backend | Status | Notes |
 |---|---|---|
 | CPU reference (PyTorch) | VERIFIED | Intel Core i5-1235U |
-| ONNX Runtime (CPU) | VERIFIED | ~5.88× vs PyTorch, CPU-to-CPU |
+| ONNX Runtime (CPU) | VERIFIED | ~5.99× vs PyTorch, CPU-to-CPU |
 | Qualcomm QNN / HTP | VERIFIED — COMPONENT / WORKLOAD | Snapdragon X Elite CRD |
 | Snapdragon X Elite | VERIFIED — COMPONENT / WORKLOAD | Validated V4 workload |
 | HTP profiling | VERIFIED | AI Hub: 6.876 ms estimated inference; NPU / HTP execution |

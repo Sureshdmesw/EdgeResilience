@@ -95,10 +95,10 @@ Qualcomm QNN / HTP execution
         ▼
 STEP 7 — COMPLETED — VALIDATED WORKLOAD
 HTP profiling and performance evidence
-  - Estimated inference time: 36 µs
+  - Estimated inference time: 6.876 ms
   - HTP utilization: 97.22%
-  - Throughput: ~3,984 inferences/sec
-  - Peak inference memory: ~27.83 MiB
+  - Throughput: ~workload-specific profiling result
+  - Peak inference memory: ~36.17 MiB
 
 Full CPU ↔ Snapdragon numerical equivalence remains unverified.
 ```

@@ -45,11 +45,11 @@ The risk interpretation policy (V4_DEGRADATION_DEMO_POLICY_V1) is:
 | Snapdragon power | NOT MEASURED |
 | Snapdragon thermal | NOT MEASURED |
 
-The ~5.88× ONNX speedup is a CPU-to-CPU measurement on an Intel
+The ~5.99× ONNX speedup is a CPU-to-CPU measurement on an Intel
 Core i5-1235U. It is NOT a Snapdragon result.
 
-The Snapdragon HTP profile reports approximately 36 µs estimated
-inference time and 97.22% HTP utilization for the profiled workload.
+The Snapdragon HTP profile reports approximately 6.876 ms estimated
+inference time and approximately 36.17 MiB peak inference memory for the profiled workload.
 These figures must not be interpreted as full V4 vehicle-system latency
 or CPU-to-Snapdragon numerical equivalence.
 

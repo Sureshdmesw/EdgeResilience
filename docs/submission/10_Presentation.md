@@ -43,7 +43,7 @@ Temporal trajectory information provides measurable improvement.
 **ONNX deployment:**
 - Dynamic ONNX export validated across batch sizes 1, 4, 16
 - Max numerical error: 5.96e-08 (threshold 1e-5, margin 168×)
-- ONNX Runtime CPU: ~5.88× lower latency vs PyTorch (CPU-to-CPU)
+- ONNX Runtime CPU: ~5.99× lower latency vs PyTorch (CPU-to-CPU)
 
 **Everything above is validated with reproducible evidence artifacts.**
 
@@ -103,7 +103,7 @@ This is a complete, end-to-end edge AI resilience story.
 | Backend | Status |
 |---|---|
 | CPU reference (PyTorch) | VERIFIED |
-| ONNX Runtime (CPU) | VERIFIED — ~5.88× vs PyTorch |
+| ONNX Runtime (CPU) | VERIFIED — ~5.99× vs PyTorch |
 | Snapdragon X Elite | VERIFIED — COMPONENT / WORKLOAD |
 | Qualcomm QNN / HTP | VERIFIED — COMPONENT / WORKLOAD |
 | HTP profiling | VERIFIED — 97.22% utilization |
@@ -136,9 +136,9 @@ CPU-to-Snapdragon numerical equivalence.
 - Fixed input shape [batch, 12, 17] — enables static NPU graph compilation
 - Standard ONNX ops only — Linear, LayerNorm, GELU, Softmax, Sigmoid
 - No dynamic control flow — ideal for NPU execution
-- HTP profiling has measured 97.22% HTP utilization for the validated
+- HTP profiling has measured approximately 36.17 MiB peak inference memory for the validated
   temporal-pooling + prediction-head workload
-- The profiled workload reports an estimated 36 µs inference time
+- The profiled workload reports an estimated 6.876 ms inference time
 - These measurements are workload-specific and are not claimed as
   full V4 system latency or acceleration vs CPU
 
@@ -184,7 +184,7 @@ Every claim in this submission is backed by a specific artifact:
 | MAE 0.0051 | temporal_predictor_v4_report.json |
 | Temporal ablation | v4_neural_ablation_report.json |
 | ONNX equivalence | v4_dynamic_onnx_equivalence_report.json |
-| ~5.88× ONNX speedup | v4_pytorch_vs_onnx_cpu_benchmark.json |
+| ~5.99× ONNX speedup | v4_pytorch_vs_onnx_cpu_benchmark.json |
 | Three-cycle demo | v4_demo_scenario.json |
 | Deployment status | snapdragon_deployment_manifest_v4.json |
 

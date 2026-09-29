@@ -100,7 +100,7 @@ The model is deliberately compact:
 - 17 features × 12 steps input
 - ONNX exported with dynamic batch support
 - Numerically equivalent to PyTorch reference (max error 5.96e-08)
-- ~5.88x lower latency with ONNX Runtime vs PyTorch (CPU-to-CPU)
+- ~5.99x lower latency with ONNX Runtime vs PyTorch (CPU-to-CPU)
 
 This is not a large model hoping to fit on a device.
 It is a model **designed around the constraints of edge inference**

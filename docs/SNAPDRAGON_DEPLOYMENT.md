@@ -67,7 +67,7 @@ Source: experiments/cpu_reference_benchmark_v4.json
 | ONNX mean latency | 0.267 ms |
 | ONNX median latency | 0.252 ms |
 | ONNX P95 latency | 0.331 ms |
-| Mean speedup vs PyTorch | ~5.88x |
+| Mean speedup vs PyTorch | ~5.99x |
 
 **IMPORTANT:** This is a CPU-to-CPU measurement on an Intel processor.
 This is NOT a Snapdragon result.
@@ -143,10 +143,10 @@ Snapdragon X Elite CRD. The remaining validation work is:
 | SoC | Qualcomm SC8380XP |
 | Accelerator | Hexagon v73 / HTP |
 | HTP execution | VERIFIED â€” validated workload |
-| HTP utilization | 97.22% |
-| Estimated inference time | 36 Âµs |
-| Throughput | ~3,984 inferences/sec |
-| Peak inference memory | ~27.83 MiB |
+| HTP utilization | NOT REPORTED |
+| Estimated inference time | 6.876 ms |
+| Throughput | Not reported |
+| Peak inference memory | ~36.17 MiB |
 | Power consumption | NOT MEASURED |
 | Thermal behavior | NOT MEASURED |
 | Full CPU â†” Snapdragon numerical equivalence | NOT VERIFIED |

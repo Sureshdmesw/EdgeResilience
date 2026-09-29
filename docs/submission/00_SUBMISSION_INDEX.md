@@ -17,7 +17,7 @@ cyber features over 12 observation steps, maintains local inference
 during connectivity loss, buffers SHA-256 hashed evidence locally,
 detects connectivity recovery, and prepares a synchronization manifest.
 The V4 model achieves MAE 0.0051. The ONNX export is validated with
-max numerical error 5.96e-08. ONNX Runtime delivers ~5.88× lower
+max numerical error 5.96e-08. ONNX Runtime delivers ~5.99× lower
 latency vs PyTorch on CPU. Snapdragon X Elite execution and Qualcomm QNN/HTP execution are
 verified at the validated component/workload level. Full CPU-to-Snapdragon
 numerical equivalence remains unverified and is under investigation.
@@ -49,7 +49,7 @@ numerical equivalence remains unverified and is under investigation.
 | Test RMSE | 0.0066 | temporal_predictor_v4_report.json |
 | Temporal ablation improvement | 0.0067 → 0.0052 MAE | v4_neural_ablation_report.json |
 | ONNX max numerical error | 5.96e-08 | v4_dynamic_onnx_equivalence_report.json |
-| ONNX CPU speedup | ~5.88× vs PyTorch | v4_pytorch_vs_onnx_cpu_benchmark.json |
+| ONNX CPU speedup | ~5.99× vs PyTorch | v4_pytorch_vs_onnx_cpu_benchmark.json |
 | CPU throughput | 33,800 samples/sec | cpu_reference_benchmark_v4.json |
 | Model parameters | 71,170 | temporal_predictor_v4_report.json |
 | Dataset records | 5,000 | dataset manifest |
