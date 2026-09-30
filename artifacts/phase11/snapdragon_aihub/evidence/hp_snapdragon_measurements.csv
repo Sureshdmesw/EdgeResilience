@@ -1,0 +1,2 @@
+timestamp,platform,machine,processor,python,inference_ms,cpu_percent,memory_mb,npu_utilization_percent,power_watts,temperature_c,notes
+2026-09-25T06:37:46.833363,Windows-10-10.0.26200-SP0,AMD64,"Intel64 Family 6 Model 154 Stepping 4, GenuineIntel",3.11.9,,,,,,,Measurement harness initialized; hardware measurements not yet captured.

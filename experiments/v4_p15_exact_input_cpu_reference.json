@@ -1,0 +1,15 @@
+{
+  "model": "models\\edgeresilience\\snapdragon\\temporal_predictor_v4_qnn_ready.onnx",
+  "input_file": "experiments\\v4_snapdragon_control_input.npy",
+  "input_sha256": "6da8ccc095eb57e618d5701714ae589a67002e7e67ec54eeb2df5b2a815fb4d5",
+  "input_shape": [
+    1,
+    12,
+    17
+  ],
+  "input_dtype": "float32",
+  "output_name": "future_resilience_degradation",
+  "cpu_output": [
+    0.008031308650970459
+  ]
+}
