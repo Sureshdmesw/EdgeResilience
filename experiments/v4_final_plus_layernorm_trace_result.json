@@ -1,0 +1,24 @@
+{
+  "compile_job": "jp4yzw12p",
+  "target_model": "mq80j8zpn",
+  "inference_job": "jpe7jvq75",
+  "input_shape": [
+    1,
+    12,
+    17
+  ],
+  "input_dtype": "float32",
+  "layernorm_output_first8": [
+    0.4685059,
+    1.0585939,
+    -0.73681647,
+    -1.7939454,
+    0.44189456,
+    -0.04403687,
+    1.3291017,
+    0.06475831
+  ],
+  "final_output": 0.01112366,
+  "production_baseline": 0.011123658157885075,
+  "conclusion": "Exposing LayerNorm output does not alter production Snapdragon final output."
+}
