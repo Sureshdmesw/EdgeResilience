@@ -1,0 +1,24 @@
+{
+  "experiment": "V4 PyTorch QNN-ready ONNX numerical equivalence",
+  "status": "PASS",
+  "samples": 100,
+  "input_shape": [
+    1,
+    12,
+    17
+  ],
+  "max_absolute_error": 9.685754776000977e-08,
+  "mean_absolute_error": 2.766726581171497e-08,
+  "rmse": 3.3752183270507885e-08,
+  "tolerance_max_absolute_error": 0.0001,
+  "tolerance_mean_absolute_error": 1e-05,
+  "onnx_input_shape": [
+    "batch",
+    12,
+    17
+  ],
+  "onnxruntime_provider": "CPUExecutionProvider",
+  "onnx_model": "E:\\EdgeResilience\\models\\edgeresilience\\snapdragon\\temporal_predictor_v4_qnn_ready.onnx",
+  "snapdragon_hardware_verified": false,
+  "qualcomm_qnn_verified": false
+}

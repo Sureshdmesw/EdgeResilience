@@ -1,0 +1,44 @@
+{
+  "compile_job_id": "j5wljw0jp",
+  "target_model_id": "mmd06doon",
+  "inference_job_id": "jpvljq8m5",
+  "input_sha256": "6da8ccc095eb57e618d5701714ae589a67002e7e67ec54eeb2df5b2a815fb4d5",
+  "outputs": {
+    "output_0": {
+      "shape": [
+        1,
+        1,
+        64
+      ],
+      "first_8": [
+        1.1591798067092896,
+        2.519531488418579,
+        -1.3779298067092896,
+        -3.488281488418579,
+        1.0947266817092896,
+        -0.0353393591940403,
+        2.626953363418579,
+        0.2773437798023224
+      ],
+      "min": -4.222656726837158,
+      "max": 5.929687976837158,
+      "mean": 0.11130240559577942,
+      "std": 2.1013693809509277,
+      "file": "E:\\EdgeResilience\\experiments\\v4_final_plus_reducesum_output_0.npy"
+    },
+    "output_1": {
+      "shape": [
+        1,
+        1
+      ],
+      "first_8": [
+        0.011123658157885075
+      ],
+      "min": 0.011123658157885075,
+      "max": 0.011123658157885075,
+      "mean": 0.011123658157885075,
+      "std": 0.0,
+      "file": "E:\\EdgeResilience\\experiments\\v4_final_plus_reducesum_output_1.npy"
+    }
+  }
+}

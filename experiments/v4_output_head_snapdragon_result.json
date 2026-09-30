@@ -1,0 +1,16 @@
+{
+  "compile_job": "jp1nrzw7g",
+  "target_model": "mn75dgdvm",
+  "inference_job": "jpxlwo6lp",
+  "device": "Snapdragon X Elite CRD",
+  "input_sha256": "4d2e976ae915c548614f53a075bfe16ed82419b7ecba0994b3df7b3da09e24a7",
+  "cpu_output": [
+    0.00803131
+  ],
+  "snapdragon_output": [
+    0.011108399368822575
+  ],
+  "absolute_error": [
+    0.0030770893688225748
+  ]
+}

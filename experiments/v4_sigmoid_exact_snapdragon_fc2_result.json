@@ -1,0 +1,11 @@
+{
+  "compile_job_id": "jgnzj6ojg",
+  "target_model_id": "mm6j1jy4q",
+  "inference_job_id": "j568kydng",
+  "input_fc2_snapdragon": -4.816460609436035,
+  "cpu_sigmoid_reference": 0.008031308650970459,
+  "snapdragon_sigmoid": 0.008300782181322575,
+  "absolute_error": 0.00026947353035211563,
+  "relative_error": 0.0335528793703569,
+  "relative_error_percent": 3.35528793703569
+}

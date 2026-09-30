@@ -1,0 +1,13 @@
+{
+  "compile_job_id": "j57eq2knp",
+  "target_model_id": "mn4o84owq",
+  "inference_job_id": "j568k28vg",
+  "input_sha256": "6da8ccc095eb57e618d5701714ae589a67002e7e67ec54eeb2df5b2a815fb4d5",
+  "output_name": "output_0",
+  "output": [
+    [
+      0.011123658157885075
+    ]
+  ],
+  "scalar": 0.011123658157885075
+}

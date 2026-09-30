@@ -1,0 +1,11 @@
+{
+  "compile_job_id": "jpvlj61r5",
+  "target_model_id": "mqy5952xn",
+  "inference_job_id": "jgk2jervg",
+  "input_fc2": -4.81634521484375,
+  "cpu_sigmoid": 0.008031308650970459,
+  "snapdragon_sigmoid": 0.008300782181322575,
+  "absolute_error": 0.00026947353035211563,
+  "relative_error": 0.0335528793703569,
+  "relative_error_percent": 3.35528793703569
+}

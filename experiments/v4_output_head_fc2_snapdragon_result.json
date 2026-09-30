@@ -1,0 +1,11 @@
+{
+  "compile_job_id": "jg9z6newp",
+  "target_model_id": "mqpkw40jn",
+  "inference_job_id": "jgnzjv8kg",
+  "input_sha256": "4415d19109372fb75eb7f66b75bac63545da4adc18c1ea4b8c3a90266f0d2a9c",
+  "cpu_fc2": -4.81634521484375,
+  "snapdragon_fc2": -4.816406726837158,
+  "absolute_error": 6.151199340820312e-05,
+  "relative_error": 1.2771508408206714e-05,
+  "relative_error_percent": 0.0012771508408206715
+}

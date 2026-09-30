@@ -1,0 +1,24 @@
+{
+  "status": "SUCCESS",
+  "inference_job": "jg9z6nnwp",
+  "compile_job": "jp1n962kg",
+  "target_model": "mn75w5l8m",
+  "device": "Snapdragon X Elite CRD",
+  "input_file": "E:\\EdgeResilience\\experiments\\v4_snapdragon_control_input.npy",
+  "input_sha256": "6fcd4043b9ab8f3cd95b22910d3420568fcff134814c17c2b601cf08718532f8",
+  "input_shape": [
+    1,
+    12,
+    17
+  ],
+  "input_dtype": "float32",
+  "cpu_output": [
+    0.008031308650970459
+  ],
+  "snapdragon_output": [
+    0.011123658157885075
+  ],
+  "max_abs_error": 0.0030923495069146156,
+  "mean_abs_error": 0.0030923495069146156,
+  "rmse": 0.0030923495069146156
+}

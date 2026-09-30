@@ -1,0 +1,7 @@
+{
+  "cpu_boundary_cpu_head": 0.008031308650970459,
+  "snapdragon_boundary_cpu_head": 0.008039891719818115,
+  "absolute_error": 8.58306884765625e-06,
+  "relative_error": 0.0010687011570174332,
+  "relative_error_percent": 0.10687011570174332
+}

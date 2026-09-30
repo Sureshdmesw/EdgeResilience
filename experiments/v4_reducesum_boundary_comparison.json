@@ -1,0 +1,13 @@
+{
+  "cpu_file": "E:\\EdgeResilience\\experiments\\v4_output_head_control_input.npy",
+  "snapdragon_file": "E:\\EdgeResilience\\experiments\\v4_reducesum_boundary_snapdragon_output.npy",
+  "max_abs_error": 0.0063648223876953125,
+  "max_error_index": 48,
+  "mean_abs_error": 0.00187360355630517,
+  "rmse": 0.0023471855092793703,
+  "max_relative_error": 0.030184974893927574,
+  "mean_relative_error": 0.0026924703270196915,
+  "cpu_at_max_error": -4.2290215492248535,
+  "snapdragon_at_max_error": -4.222656726837158,
+  "signed_error_at_max": 0.0063648223876953125
+}
