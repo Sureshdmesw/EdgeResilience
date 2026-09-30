@@ -50,7 +50,7 @@ The following are **NOT** evidence of QNN execution:
 4. `QNNExecutionProvider` present in `onnxruntime.get_available_providers()`
 5. Successful model conversion producing a `.bin` or `.cpp` QNN artifact
 6. Successful inference session using `QNNExecutionProvider`
-7. Numerical equivalence verified against PyTorch/ONNX CPU reference
+7. QNN-ready ONNX CPU-reference numerical equivalence verified
 
 ---
 

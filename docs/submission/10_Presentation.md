@@ -106,7 +106,7 @@ This is a complete, end-to-end edge AI resilience story.
 | ONNX Runtime (CPU) | VERIFIED — ~5.99× vs PyTorch |
 | Snapdragon X Elite | VERIFIED — COMPONENT / WORKLOAD |
 | Qualcomm QNN / HTP | VERIFIED — COMPONENT / WORKLOAD |
-| HTP profiling | VERIFIED — 97.22% utilization |
+| Full production V4 HTP profiling | VERIFIED - 63 us estimated latency; 90/90 NPU profile entries |
 | Full CPU ↔ Snapdragon numerical equivalence | NOT VERIFIED |
 | Physical vehicle | NOT PERFORMED |
 

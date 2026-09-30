@@ -11,7 +11,7 @@ The EdgeResilience V4 temporal predictor has been validated on CPU and
 exported to ONNX. A QNN-ready ONNX derivative has been prepared with
 constant folding applied (Mod operator eliminated, 336â†’176 nodes, all
 standard ONNX opset 17 operators). The derivative is numerically
-equivalent to the source ONNX (max error = 0.0 over 200 samples).
+numerically equivalent to the source ONNX on CPU (max error = 0.0 over 200 samples).
 
 The deployment path to Snapdragon NPU via Qualcomm QNN is fully prepared
 but not yet hardware-verified. The current machine (Lenovo IdeaPad 3,
@@ -104,7 +104,7 @@ Source: experiments/v4_dynamic_onnx_equivalence_report.json
 | Operators | All standard ONNX opset 17 â€” no ORT-internal fused ops |
 | Unsupported QNN ops | NONE |
 | ONNX checker | PASS |
-| Numerical equivalence | PASS â€” max error = 0.0 (200 samples) |
+| QNN-ready ONNX vs source ONNX numerical equivalence | PASS - max error = 0.0 (200 samples) |
 | QNN execution | VERIFIED â€” Qualcomm QNN/HTP workload |
 
 Source: experiments/snapdragon/qnn_ready_model_report.json

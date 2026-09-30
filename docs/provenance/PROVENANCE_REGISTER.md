@@ -8,7 +8,7 @@
 | Phase 5.9 CAN anomaly dataset | inherited/reference | Previous project commit | reference only | Virtual laboratory data — not V4 input |
 | V4 temporal dataset | new EdgeResilience artifact | This project — synthetic generation | VALIDATED | 5000 records, 17 features, 12 steps, SHA256 documented |
 | V4 temporal predictor checkpoint | new EdgeResilience artifact | This project — trained from scratch | VALIDATED | MAE ~0.0051, RMSE ~0.0066 |
-| V4 ONNX static export | new EdgeResilience artifact | This project | VALIDATED | Numerical equivalence verified |
+| V4 ONNX static export | new EdgeResilience artifact | This project | VALIDATED | V4 ONNX CPU-reference numerical equivalence verified |
 | V4 ONNX dynamic export | new EdgeResilience artifact | This project | VALIDATED | Batch 1/4/16 equivalence verified, threshold 1e-5 |
 | V4 inference engine | new EdgeResilience artifact | This project | VALIDATED | src/ai/v4_inference.py |
 | V4 risk interpretation | new EdgeResilience artifact | This project | VALIDATED | src/resilience/v4_risk.py — deterministic demo policy |

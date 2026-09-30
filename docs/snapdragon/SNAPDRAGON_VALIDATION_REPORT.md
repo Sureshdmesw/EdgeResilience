@@ -139,7 +139,7 @@ Protected artifacts (checkpoint + source ONNX) were NOT modified.
 | Derivative ONNX checker | PASS |
 | Derivative operators | All standard ONNX opset 17, no ORT-internal fused ops |
 | Unsupported QNN operators | NONE |
-| Numerical equivalence (200 samples) | PASS — max error = 0.0 |
+| QNN-ready ONNX vs source ONNX numerical equivalence (200 samples) | PASS - max error = 0.0 |
 
 ### QNN SDK Conversion (qnn-onnx-converter)
 

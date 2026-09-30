@@ -125,19 +125,24 @@ before finalizing any presentation, README, or demo material.
 
 | **Field** | **Value** |
 | --- | --- |
-| **Claim** | Qualcomm HTP/NPU execution has been verified for validated V4 components and the profiled temporal-pooling + prediction-head workload |
-| **Evidence** | `docs/qualcomm_aihub_hardware_validation.md`; `docs/qualcomm_aihub_htp_validation.md` |
-| **Status** | **VERIFIED — VALIDATED WORKLOAD / COMPONENTS** |
+| **Claim** | Qualcomm HTP/NPU execution has been verified for the full production V4 model profile |
+| **Evidence** | experiments/snapdragon/profile_artifacts/v4_full_production; QAI Hub profile job jpxlwmxlp |
+| **Status** | **VERIFIED - FULL PRODUCTION V4 PROFILE** |
 | **Device** | Snapdragon X Elite CRD |
-| **HTP utilization** | 97.22% |
-| **Estimated inference time** | 36 µs / 0.036 ms for the profiled workload |
-| **NPU-executed layers** | 29 for the profiled workload |
-| **Allowed** | "HTP/NPU execution verified for the validated workload" |
-| **Allowed** | "HTP profiling measured approximately 36 µs estimated inference time for the profiled workload" |
-| **Allowed** | "HTP utilization measured at approximately 97.22% for the profiled workload" |
-| **Disallowed** | "Full V4 NPU execution verified" |
-| **Disallowed** | "36 µs is the full V4 model latency" |
-| **Disallowed** | "X× acceleration" without an explicitly defined comparable baseline |
+| **Estimated inference time** | 63 us |
+| **Warm median latency** | 67 us |
+| **Warm mean latency** | 68.96 us |
+| **Warm P90 / P95 / P99** | 77 / 82 / 88 us |
+| **Peak inference memory** | 28.5 MB |
+| **NPU-executed profile entries** | 90 / 90 |
+| **HTP utilization** | NOT EXPOSED BY QAI Hub PROFILE |
+| **Warm single-batch throughput estimate** | ~14,501 inferences/s |
+| **Allowed** | Full production V4 HTP/NPU execution was profiled successfully |
+| **Allowed** | Estimated full-production V4 inference latency was 63 us on the Snapdragon X Elite CRD profile |
+| **Allowed** | Warm single-batch profile corresponds to approximately 14,501 inferences/s at the warm mean |
+| **Disallowed** | Any percentage HTP-utilization claim not directly exposed by the profile |
+| **Disallowed** | CPU-to-Snapdragon numerical equivalence verified |
+| **Disallowed** | 63 us is a sustained production throughput benchmark |
 
 ---
 
@@ -145,18 +150,18 @@ before finalizing any presentation, README, or demo material.
 
 | **Field** | **Value** |
 | --- | --- |
-| **Claim** | CPU-to-Snapdragon numerical equivalence for the complete V4 production model has not yet been established |
-| **Status** | **NOT VERIFIED** |
-| **Single-input comparison** | Max absolute error: `0.0020244727` |
-| **Five-input comparison** | Max absolute error: `0.0023509823` |
-| **Five-input RMSE** | `0.0018081717` |
-| **Current equivalence threshold** | `1e-5` |
-| **Result** | Current CPU-to-Snapdragon numerical-equivalence test does not meet the threshold |
-| **Diagnostic finding** | First LayerNorm diagnostic also shows input-dependent CPU-to-Snapdragon differences |
-| **LayerNorm #1 max absolute error** | `0.0052738190` |
-| **LayerNorm #1 RMSE** | `0.0010014904` |
-| **Next investigation** | LayerNorm #2 and downstream attention/prediction-head operations |
-| **Reporting boundary** | Hardware execution success must not be interpreted as numerical equivalence |
+| **Claim** | CPU-to-Snapdragon numerical equivalence for the complete V4 production model has not been established |
+| **Status** | **FAILED** |
+| **Authoritative validator** | experiments/v4_cpu_snapdragon_numerical_equivalence.json |
+| **Max absolute error** | 0.0030923495 |
+| **Mean absolute error** | 0.0030923495 |
+| **RMSE** | 0.0030923495 |
+| **Max relative error** | 38.50% |
+| **Acceptance thresholds** | Max absolute 1e-4; mean absolute 1e-5 |
+| **Result** | CPU-to-Snapdragon numerical equivalence does not meet the established acceptance thresholds |
+| **Diagnostic finding** | First material production-path divergence was localized to LayerNorm |
+| **Diagnostic status** | Investigation completed; multiple precision, reduction, and fusion hypotheses were tested without establishing numerical equivalence |
+| **Reporting boundary** | Snapdragon hardware execution and HTP profiling must not be interpreted as CPU-to-Snapdragon numerical equivalence |
 
 ## Edge AI
 

@@ -1,5 +1,4 @@
 # EdgeResilience — 05: Snapdragon Optimization Path
-
 ## Design Intent
 
 EdgeResilience is **designed for on-device deployment on
@@ -48,7 +47,7 @@ TODAY — VALIDATED
 ✓  QNN-ready ONNX derivative prepared
    Mod operator eliminated (336→176 nodes)
    All standard ONNX opset 17 ops — no unsupported QNN ops
-   Numerical equivalence: max error = 0.0 (200 samples)
+   QNN-ready ONNX vs source ONNX numerical equivalence: max error = 0.0 (200 samples)
    SHA256: E2B22D8A872F1AFEF2CFD34FDE11295EC69F2BC3C4324402F284EC4F6422A62E
 
 ✓  Local inference architecture validated
@@ -70,14 +69,14 @@ PyTorch model trained and validated
         ▼
 STEP 2 — COMPLETE
 ONNX export with dynamic batch support
-Numerical equivalence verified (max error 5.96e-8)
+ONNX export CPU-reference equivalence verified (max error 5.96e-8)
         │
         ▼
 STEP 3 — COMPLETE (software)
 QNN-ready ONNX derivative prepared
 Mod operator eliminated via constant folding
 336 → 176 nodes | all standard ONNX opset 17 ops
-Numerical equivalence: max error = 0.0
+QNN-ready ONNX vs source ONNX numerical equivalence: max error = 0.0
 SHA256: E2B22D8A872F1AFEF2CFD34FDE11295EC69F2BC3C4324402F284EC4F6422A62E
         │
         ▼
@@ -93,14 +92,23 @@ STEP 6 — COMPLETED — VALIDATED WORKLOAD
 Qualcomm QNN / HTP execution
         │
         ▼
-STEP 7 — COMPLETED — VALIDATED WORKLOAD
-HTP profiling and performance evidence
-  - Estimated inference time: 6.876 ms
-  - HTP utilization: 97.22%
-  - Throughput: ~workload-specific profiling result
-  - Peak inference memory: ~36.17 MiB
+STEP 7 - COMPLETED - FULL PRODUCTION V4 PROFILE
+Qualcomm QNN / HTP profiling and performance evidence
+  - Estimated inference time: 63 us
+  - Warm median latency: 67 us
+  - Warm mean latency: 68.96 us
+  - Warm P90 / P95 / P99: 77 / 82 / 88 us
+  - Peak inference memory: 28.5 MB
+  - NPU-executed profile entries: 90 / 90
+  - Warm single-batch throughput estimate: ~14,501 inferences/s
+  - HTP utilization percentage: NOT EXPOSED BY QAI Hub PROFILE
 
-Full CPU ↔ Snapdragon numerical equivalence remains unverified.
+The throughput figure is derived from warm single-batch profile timings and is not a separately measured sustained-throughput benchmark.
+
+Full CPU-to-Snapdragon numerical equivalence: FAIL
+  - Max absolute error: 0.0030923495
+  - Max relative error: 38.50%
+  - Acceptance threshold: 1e-5
 ```
 
 ---
@@ -134,14 +142,14 @@ model. It is designed for inference efficiency.
 
 ## Snapdragon Benefits and Remaining Measurements
 
-The following deployment benefits are supported by the Snapdragon X Elite profiling evidence where explicitly measured. Power, thermal behavior, and comparative throughput remain unmeasured in the current evidence.
+The following deployment measurements are supported by the Snapdragon X Elite profiling evidence. Power and thermal behavior remain unmeasured, and the throughput figure is a profile-derived warm single-batch estimate rather than a CPU comparison.
 
 | Metric | Expected direction | Basis |
 |---|---|---|
-| Inference latency | Lower than CPU | NPU hardware acceleration |
+| Inference latency | 63 us estimated Snapdragon profile latency | QNN/HTP full-production profile |
 | Power consumption | NOT MEASURED | Project-specific power measurement pending |
 | Thermal behavior | NOT MEASURED | Project-specific thermal measurement pending |
-| Throughput | Higher than CPU | NPU parallelism |
+| Throughput | ~14,501 inferences/s warm single-batch estimate | Profile-derived warm mean; sustained throughput not separately measured |
 
 **None of these are claimed as verified results.**
 They represent the motivation for Snapdragon deployment.
