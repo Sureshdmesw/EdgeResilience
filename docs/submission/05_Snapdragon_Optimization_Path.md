@@ -170,22 +170,33 @@ This statement is strong, precise, and fully defensible.
 
 ---
 
-## Remaining Validation Work
+## Validation Status and Evidence Boundary
 
-The Snapdragon X Elite CRD has provided Qualcomm AI Hub compile and profiling evidence for the optimized EdgeResilience V4 workload, including successful NPU/HTP execution and full-production profiling. CPU-to-Snapdragon numerical equivalence was evaluated against the established acceptance threshold and did not meet it; the investigation is complete and the limitation is explicitly documented.
+The Snapdragon X Elite CRD has provided Qualcomm AI Hub compile and profiling evidence for the optimized EdgeResilience V4 workload, including successful NPU/HTP execution and full-production profiling.
 
-1. Preserve the Qualcomm AI Hub compile, inference, and profiling evidence already generated.
-2. Complete operator-level investigation of CPU-to-Snapdragon numerical divergence.
-3. Re-run the complete production-model comparison after any corrective graph/operator changes.
-4. Verify numerical equivalence against the CPU reference using the established threshold of 1e-5.
-5. Only after successful equivalence should a full end-to-end Snapdragon numerical-equivalence claim be made.
-6. Keep physical vehicle, external CAN transmission, direct actuation, and production-vehicle validation outside the current evidence boundary.
+The complete CPU-to-Snapdragon numerical-equivalence validation was executed against the established acceptance thresholds. The result did not meet the acceptance criteria:
 
-The current status is:
-`CPU_ONNX_VERIFIED_SNAPDRAGON_COMPONENT_WORKLOAD_VERIFIED`.
+- Maximum absolute error: 0.0030923495
+- Maximum relative error: 38.50%
+- Acceptance threshold: not met
+- Investigation status: completed
 
-Full CPU-to-Snapdragon numerical equivalence was evaluated and did not meet the established acceptance threshold.
-Operator-level investigation is in progress.
+The operator-level investigation evaluated precision, reduction, LayerNorm, output-head, and graph-boundary hypotheses. No corrective change was established that would justify an end-to-end numerical-equivalence claim.
+
+The current validated status is:
+`SNAPDRAGON_FULL_PRODUCTION_HTP_PROFILE_VERIFIED_NUMERICAL_EQUIVALENCE_FAIL_POWER_THERMAL_UNVERIFIED`
+
+The following remain outside the current evidence boundary:
+
+1. Project-specific Snapdragon power measurement.
+2. Project-specific Snapdragon thermal measurement.
+3. Physical HP Snapdragon PC validation.
+4. Physical vehicle validation.
+5. External CAN transmission.
+6. Direct vehicle actuation.
+7. Production-vehicle validation.
+
+The Qualcomm AI Hub compile, inference, profiling, and numerical-validation evidence already generated should be preserved as the authoritative evidence set.
 
 ## Snapdragon-powered HP PC Edge AI Deployment
 
@@ -194,11 +205,11 @@ Operator-level investigation is in progress.
 **Deployment concept:**
 
 HP Snapdragon-powered PC
-? Snapdragon X Elite
-? Qualcomm AI Hub / QNN
-? Snapdragon NPU / HTP
-? EdgeResilience local AI inference
-? Detection / Prediction / Containment / Forensic Buffer
-? Secure SOC synchronization
+→ Snapdragon X Elite
+→ Qualcomm AI Hub / QNN
+→ Snapdragon NPU / HTP
+→ EdgeResilience local AI inference
+→ Detection / Prediction / Containment / Forensic Buffer
+→ Secure SOC synchronization
 
 The current Qualcomm AI Hub evidence validates the optimized model on a **Snapdragon X Elite CRD**. This is evidence of Snapdragon-targeted optimization and NPU/HTP execution, while physical deployment on a specific HP Snapdragon PC remains an intended deployment target unless separately measured on that HP device.
