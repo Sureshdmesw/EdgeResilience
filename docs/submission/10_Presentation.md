@@ -2,6 +2,10 @@
 
 **Qualcomm Snapdragon AI Lab Build and Present Challenge**
 **Project:** EdgeResilience: Snapdragon-Powered Predictive Intelligence
+
+**Development:** Lenovo IdeaPad 3 15IAU7 / Intel Core i5-1235U.
+**Snapdragon validation:** Snapdragon X Elite CRD via Qualcomm AI Hub / QNN HTP.
+**HP Snapdragon validation:** Not performed; HP Snapdragon PC remains the intended deployment platform.
 for Connected Vehicle Safety
 
 ---
@@ -107,7 +111,7 @@ This is a complete, end-to-end edge AI resilience story.
 | Snapdragon X Elite | VERIFIED — COMPONENT / WORKLOAD |
 | Qualcomm QNN / HTP | VERIFIED — COMPONENT / WORKLOAD |
 | Full production V4 HTP profiling | VERIFIED - 63 us estimated latency; 90/90 NPU profile entries |
-| Full CPU ↔ Snapdragon numerical equivalence | FAILED $3
+| Full CPU ↔ Snapdragon numerical equivalence | FAILED | Max abs error 0.0030923495; acceptance threshold not met |
 | Physical vehicle | NOT PERFORMED |
 
 ### The Snapdragon deployment path is real and specific

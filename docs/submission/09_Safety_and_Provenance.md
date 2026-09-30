@@ -40,7 +40,7 @@ The risk interpretation policy (V4_DEGRADATION_DEMO_POLICY_V1) is:
 | Qualcomm QNN / HTP execution | VERIFIED — COMPONENT / WORKLOAD LEVEL |
 | Snapdragon X Elite execution | VERIFIED — COMPONENT / WORKLOAD LEVEL |
 | HTP/NPU profiling | VERIFIED — VALIDATED WORKLOAD |
-| Full CPU ↔ Snapdragon numerical equivalence | FAILED $3
+| Full CPU ↔ Snapdragon numerical equivalence | FAILED | Max abs error 0.0030923495; acceptance threshold not met |
 | Full V4 Snapdragon latency | NOT CLAIMED |
 | Snapdragon power | NOT MEASURED |
 | Snapdragon thermal | NOT MEASURED |
@@ -74,7 +74,7 @@ or CPU-to-Snapdragon numerical equivalence.
 | Previous CRSS Transformer | INHERITED/REFERENCE — frozen, immutable, not used |
 | Snapdragon X Elite | VERIFIED — COMPONENT / WORKLOAD LEVEL |
 | Qualcomm QNN / HTP | VERIFIED — COMPONENT / WORKLOAD LEVEL |
-| Full CPU ↔ Snapdragon numerical equivalence | FAILED $3
+| Full CPU ↔ Snapdragon numerical equivalence | FAILED | Max abs error 0.0030923495; acceptance threshold not met |
 | Physical vehicle validation | NOT PERFORMED |
 
 ---

@@ -137,5 +137,5 @@ Direct actuation:            NO
 Production vehicle:          NO
 Snapdragon X Elite:          VERIFIED — COMPONENT / WORKLOAD
 Qualcomm QNN / HTP:          VERIFIED — COMPONENT / WORKLOAD
-Full CPU ↔ Snapdragon numerical equivalence: NOT VERIFIED
+Full CPU ↔ Snapdragon numerical equivalence: FAILED - acceptance threshold not met
 ```

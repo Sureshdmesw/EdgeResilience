@@ -36,7 +36,7 @@ Then open: **http://127.0.0.1:8765**
 - Snapdragon X Elite: VERIFIED — COMPONENT / WORKLOAD
 - Qualcomm QNN / HTP: VERIFIED — COMPONENT / WORKLOAD
 - HTP profiling: VERIFIED — VALIDATED WORKLOAD
-- Full CPU ↔ Snapdragon numerical equivalence: NOT VERIFIED
+- Full CPU ↔ Snapdragon numerical equivalence: FAILED - acceptance threshold not met
 - Overall status: CPU_ONNX_VERIFIED_SNAPDRAGON_COMPONENT_WORKLOAD_VERIFIED
 
 ### Summary Cards (latest cycle)

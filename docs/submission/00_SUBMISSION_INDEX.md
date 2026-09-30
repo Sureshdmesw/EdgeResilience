@@ -1,8 +1,11 @@
 # EdgeResilience — Submission Package Index
 
 **Competition:** Qualcomm Snapdragon AI Lab Build and Present Challenge
-**Project:** EdgeResilience: Snapdragon-Powered Predictive Intelligence
-for Connected Vehicle Safety
+**Project:** EdgeResilience: Snapdragon-Powered Predictive Intelligence for Connected Vehicle Safety
+
+**Development environment:** Lenovo IdeaPad 3 15IAU7 with Intel Core i5-1235U.
+**Snapdragon validation:** Snapdragon X Elite CRD through Qualcomm AI Hub / QNN HTP.
+**HP Snapdragon PC:** Intended deployment platform; physical HP-device validation was not performed.
 **Status:** Competition ready — V4 baseline + Snapdragon component/workload validation
 
 ---
@@ -20,7 +23,7 @@ The V4 model achieves MAE 0.0051. The ONNX export is validated with
 max numerical error 5.96e-08. ONNX Runtime delivers ~5.99× lower
 latency vs PyTorch on CPU. Snapdragon X Elite execution and Qualcomm QNN/HTP execution are
 verified at the validated component/workload level. Full CPU-to-Snapdragon
-numerical equivalence remains unverified and is under investigation.
+numerical equivalence was evaluated and did not meet the established acceptance threshold.
 
 ---
 
@@ -70,7 +73,7 @@ numerical equivalence remains unverified and is under investigation.
 | Qualcomm QNN/HTP | VERIFIED — COMPONENT / WORKLOAD LEVEL |
 | Snapdragon X Elite | VERIFIED — COMPONENT / WORKLOAD LEVEL |
 | HTP/NPU profiling | VERIFIED — VALIDATED WORKLOAD |
-| Full CPU ↔ Snapdragon numerical equivalence | FAILED $3
+| Full CPU ↔ Snapdragon numerical equivalence | FAILED | Max abs error 0.0030923495; acceptance threshold not met |
 | Physical vehicle | NOT PERFORMED |
 | External CAN | NOT PERFORMED |
 | Direct actuation | NOT PERFORMED |

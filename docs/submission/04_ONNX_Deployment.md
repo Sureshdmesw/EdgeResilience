@@ -103,7 +103,7 @@ model is well-suited for further acceleration on Snapdragon.
 | Qualcomm QNN / HTP | VERIFIED — COMPONENT / WORKLOAD | Snapdragon X Elite CRD |
 | Snapdragon X Elite | VERIFIED — COMPONENT / WORKLOAD | Validated V4 workload |
 | HTP profiling | VERIFIED | AI Hub: 63 us estimated full-production V4 inference; 90/90 NPU profile entries |
-| Full CPU ↔ Snapdragon numerical equivalence | FAILED $3
+| Full CPU ↔ Snapdragon numerical equivalence | FAILED | Max abs error 0.0030923495; acceptance threshold not met |
 
 Overall: **CPU_ONNX_VERIFIED_SNAPDRAGON_COMPONENT_WORKLOAD_VERIFIED**
 

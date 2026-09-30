@@ -163,8 +163,8 @@ They represent the motivation for Snapdragon deployment.
 > establishes the V4 predictive model, ONNX deployment artifact,
 > local inference architecture, and reproducible software
 > demonstration. Qualcomm QNN / HTP execution and Snapdragon X Elite
-> component/workload validation have been demonstrated. Full
-> CPU-to-Snapdragon numerical equivalence remains unverified.
+> component/workload validation have been demonstrated.
+> Full CPU-to-Snapdragon numerical equivalence was evaluated and did not meet the established acceptance threshold.
 
 This statement is strong, precise, and fully defensible.
 
@@ -172,7 +172,7 @@ This statement is strong, precise, and fully defensible.
 
 ## Remaining Validation Work
 
-The Snapdragon X Elite CRD has provided Qualcomm AI Hub compile and profiling evidence for the optimized YOLOv11 workload, including successful NPU/HTP execution and profiled inference. The remaining technical work is to resolve CPU-to-Snapdragon numerical divergence for the complete production inference path before making a full end-to-end numerical-equivalence claim.
+The Snapdragon X Elite CRD has provided Qualcomm AI Hub compile and profiling evidence for the optimized EdgeResilience V4 workload, including successful NPU/HTP execution and full-production profiling. CPU-to-Snapdragon numerical equivalence was evaluated against the established acceptance threshold and did not meet it; the investigation is complete and the limitation is explicitly documented.
 
 1. Preserve the Qualcomm AI Hub compile, inference, and profiling evidence already generated.
 2. Complete operator-level investigation of CPU-to-Snapdragon numerical divergence.
@@ -184,7 +184,7 @@ The Snapdragon X Elite CRD has provided Qualcomm AI Hub compile and profiling ev
 The current status is:
 `CPU_ONNX_VERIFIED_SNAPDRAGON_COMPONENT_WORKLOAD_VERIFIED`.
 
-Full CPU-to-Snapdragon numerical equivalence remains unverified.
+Full CPU-to-Snapdragon numerical equivalence was evaluated and did not meet the established acceptance threshold.
 Operator-level investigation is in progress.
 
 ## Snapdragon-powered HP PC Edge AI Deployment
