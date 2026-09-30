@@ -21,10 +21,10 @@
 | ONNX equivalence report | new EdgeResilience artifact | This project | VALIDATED | experiments/v4_dynamic_onnx_equivalence_report.json |
 | CPU reference benchmark | new EdgeResilience artifact | This project | VALIDATED | experiments/cpu_reference_benchmark_v4.json |
 | PyTorch vs ONNX CPU benchmark | new EdgeResilience artifact | This project | VALIDATED | experiments/v4_pytorch_vs_onnx_cpu_benchmark.json — CPU-to-CPU only |
-| Snapdragon deployment manifest | new EdgeResilience artifact | This project | CPU_AND_ONNX_VALIDATED_SNAPDRAGON_PENDING | experiments/snapdragon_deployment_manifest_v4.json |
+| Snapdragon deployment manifest | new EdgeResilience artifact | This project | SNAPDRAGON_FULL_PRODUCTION_HTP_PROFILE_VERIFIED | experiments/snapdragon_deployment_manifest_v4.json |
 | Dashboard server | new EdgeResilience artifact | This project | VALIDATED | src/dashboard/server.py |
-| Snapdragon hardware benchmark | new EdgeResilience artifact | This project | NOT VERIFIED | Requires actual Snapdragon environment |
-| Qualcomm QNN execution | new EdgeResilience artifact | This project | NOT VERIFIED | Requires QNN runtime and Snapdragon hardware |
+| Snapdragon hardware benchmark | new EdgeResilience artifact | This project | VERIFIED_WITH_LIMITATIONS | Snapdragon X Elite CRD HTP profile; power/thermal not verified |
+| Qualcomm QNN execution | new EdgeResilience artifact | This project | VERIFIED_WITH_LIMITATIONS | QNN/HTP execution verified on Snapdragon X Elite CRD; CPU-to-Snapdragon numerical equivalence failed |
 | Vehicle modules (CAN/HIL) | inherited/reference | Previous project | reference only | src/vehicle/*_inherited.py — not used in V4 pipeline |
 
 ## Rules

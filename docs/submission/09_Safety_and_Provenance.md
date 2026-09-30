@@ -40,7 +40,7 @@ The risk interpretation policy (V4_DEGRADATION_DEMO_POLICY_V1) is:
 | Qualcomm QNN / HTP execution | VERIFIED — COMPONENT / WORKLOAD LEVEL |
 | Snapdragon X Elite execution | VERIFIED — COMPONENT / WORKLOAD LEVEL |
 | HTP/NPU profiling | VERIFIED — VALIDATED WORKLOAD |
-| Full CPU ↔ Snapdragon numerical equivalence | NOT VERIFIED |
+| Full CPU ↔ Snapdragon numerical equivalence | FAILED $3
 | Full V4 Snapdragon latency | NOT CLAIMED |
 | Snapdragon power | NOT MEASURED |
 | Snapdragon thermal | NOT MEASURED |
@@ -48,8 +48,8 @@ The risk interpretation policy (V4_DEGRADATION_DEMO_POLICY_V1) is:
 The ~5.99× ONNX speedup is a CPU-to-CPU measurement on an Intel
 Core i5-1235U. It is NOT a Snapdragon result.
 
-The Snapdragon HTP profile reports approximately 6.876 ms estimated
-inference time and approximately 36.17 MiB peak inference memory for the profiled workload.
+The Snapdragon full-production V4 HTP profile reports an estimated 63 us
+inference latency and 28.5 MB peak inference memory. The warm median is 67 us and warm mean is 68.96 us.
 These figures must not be interpreted as full V4 vehicle-system latency
 or CPU-to-Snapdragon numerical equivalence.
 
@@ -74,7 +74,7 @@ or CPU-to-Snapdragon numerical equivalence.
 | Previous CRSS Transformer | INHERITED/REFERENCE — frozen, immutable, not used |
 | Snapdragon X Elite | VERIFIED — COMPONENT / WORKLOAD LEVEL |
 | Qualcomm QNN / HTP | VERIFIED — COMPONENT / WORKLOAD LEVEL |
-| Full CPU ↔ Snapdragon numerical equivalence | NOT VERIFIED |
+| Full CPU ↔ Snapdragon numerical equivalence | FAILED $3
 | Physical vehicle validation | NOT PERFORMED |
 
 ---

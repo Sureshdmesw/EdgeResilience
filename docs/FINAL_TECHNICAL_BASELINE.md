@@ -536,12 +536,12 @@ Risk interpretation is a demonstration policy, not a certified safety control.
 | CPU reference inference | VERIFIED |
 | ONNX Runtime CPU inference | VERIFIED |
 | ONNX numerical equivalence | VERIFIED |
-| Qualcomm QNN execution | NOT VERIFIED |
-| Snapdragon hardware deployment | NOT VERIFIED |
-| NPU execution | NOT VERIFIED |
+| Qualcomm QNN execution | VERIFIED WITH LIMITATIONS | Snapdragon X Elite CRD QNN/HTP production profile |
+| Snapdragon hardware deployment | VERIFIED WITH LIMITATIONS | Snapdragon X Elite CRD production HTP profile; power/thermal unverified |
+| NPU execution | VERIFIED | Snapdragon X Elite CRD production HTP profile; 90/90 NPU entries |
 | Accelerator utilization | NOT VERIFIED |
-| Latency on Snapdragon | NOT VERIFIED |
-| Throughput on Snapdragon | NOT VERIFIED |
+| Latency on Snapdragon | VERIFIED | 63 us estimated; 67 us warm median; 68.96 us warm mean |
+| Throughput on Snapdragon | VERIFIED WITH LIMITATION | ~14,501/s warm single-batch profile estimate |
 | Power consumption | NOT VERIFIED |
 | Thermal behavior | NOT VERIFIED |
 

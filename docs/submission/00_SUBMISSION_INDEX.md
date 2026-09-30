@@ -70,7 +70,7 @@ numerical equivalence remains unverified and is under investigation.
 | Qualcomm QNN/HTP | VERIFIED — COMPONENT / WORKLOAD LEVEL |
 | Snapdragon X Elite | VERIFIED — COMPONENT / WORKLOAD LEVEL |
 | HTP/NPU profiling | VERIFIED — VALIDATED WORKLOAD |
-| Full CPU ↔ Snapdragon numerical equivalence | NOT VERIFIED |
+| Full CPU ↔ Snapdragon numerical equivalence | FAILED $3
 | Physical vehicle | NOT PERFORMED |
 | External CAN | NOT PERFORMED |
 | Direct actuation | NOT PERFORMED |

@@ -107,7 +107,7 @@ This is a complete, end-to-end edge AI resilience story.
 | Snapdragon X Elite | VERIFIED — COMPONENT / WORKLOAD |
 | Qualcomm QNN / HTP | VERIFIED — COMPONENT / WORKLOAD |
 | Full production V4 HTP profiling | VERIFIED - 63 us estimated latency; 90/90 NPU profile entries |
-| Full CPU ↔ Snapdragon numerical equivalence | NOT VERIFIED |
+| Full CPU ↔ Snapdragon numerical equivalence | FAILED $3
 | Physical vehicle | NOT PERFORMED |
 
 ### The Snapdragon deployment path is real and specific
@@ -136,9 +136,9 @@ CPU-to-Snapdragon numerical equivalence.
 - Fixed input shape [batch, 12, 17] — enables static NPU graph compilation
 - Standard ONNX ops only — Linear, LayerNorm, GELU, Softmax, Sigmoid
 - No dynamic control flow — ideal for NPU execution
-- HTP profiling has measured approximately 36.17 MiB peak inference memory for the validated
-  temporal-pooling + prediction-head workload
-- The profiled workload reports an estimated 6.876 ms inference time
+- Full-production V4 HTP profiling reports 28.5 MB peak inference memory and 90/90 NPU profile entries
+  on the Snapdragon X Elite CRD
+- Full-production V4 profiling reports 63 us estimated inference latency, with a 67 us warm median and 68.96 us warm mean
 - These measurements are workload-specific and are not claimed as
   full V4 system latency or acceleration vs CPU
 

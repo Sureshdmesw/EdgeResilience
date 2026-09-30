@@ -174,11 +174,11 @@ The dashboard displays the V4 demo scenario with:
 | Qualcomm QNN / HTP | VERIFIED — COMPONENT / WORKLOAD |
 | Snapdragon X Elite | VERIFIED — COMPONENT / WORKLOAD |
 | HTP profiling | VERIFIED — VALIDATED WORKLOAD |
-| Full CPU ↔ Snapdragon numerical equivalence | NOT VERIFIED |
+| Full CPU ↔ Snapdragon numerical equivalence | FAILED $3
 
 Qualcomm QNN / HTP execution has been validated on a Snapdragon X Elite
 CRD for the tested V4 workload. The profiled workload achieved an estimated
-6.876 ms estimated inference time and approximately 36.17 MiB peak inference memory.
+63 us estimated full-production V4 inference latency, with 67 us warm median, 68.96 us warm mean, and 28.5 MB peak inference memory.
 
 These are workload-specific measurements and are not full vehicle-system
 latency measurements. The ~5.99x ONNX speedup is a CPU-to-CPU measurement

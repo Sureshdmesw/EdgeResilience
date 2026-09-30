@@ -3,13 +3,13 @@
 **Project:** EdgeResilience: Snapdragon-Powered Predictive Intelligence for Connected Vehicle Safety
 **Competition:** Qualcomm Snapdragon AI Lab Build and Present Challenge
 **Report Type:** Snapdragon Deployment Validation
-**Overall Status:** CPU_AND_ONNX_VALIDATED_SNAPDRAGON_PENDING
+**Overall Status:** SNAPDRAGON_FULL_PRODUCTION_HTP_PROFILE_VERIFIED_NUMERICAL_EQUIVALENCE_FAIL_POWER_THERMAL_UNVERIFIED
 
 ---
 
 ## 1. Objective
 
-Determine whether Snapdragon hardware, Qualcomm QNN, and NPU execution can be verified in the current environment. If not, document the exact blocker, prepare all deployment artifacts, and establish a reproducible validation procedure for when the correct hardware is available.
+Document Snapdragon X Elite CRD deployment validation, QNN/HTP execution evidence, production profiling, numerical-equivalence results, and remaining validation boundaries.
 
 ---
 
@@ -109,9 +109,9 @@ Protected artifacts (checkpoint + source ONNX) were NOT modified.
 | QNNExecutionProvider in ORT | NOT VERIFIED |
 | QNN CPU backend | NOT VERIFIED |
 | QNN GPU backend | NOT VERIFIED |
-| QNN HTP/NPU backend | NOT VERIFIED |
-| QNN conversion performed | NOT PERFORMED |
-| Blocker | No Snapdragon hardware. No QNN SDK. No QNN ORT provider. |
+| QNN HTP/NPU backend | VERIFIED | Snapdragon X Elite CRD production HTP profile |
+| QNN conversion performed | VERIFIED FOR PRODUCTION DEPLOYMENT WORKFLOW | QNN-ready production artifact/profile evidence |
+| Historical blocker | Original Intel development environment lacked Snapdragon hardware/QNN SDK; superseded by later Snapdragon X Elite CRD validation |
 
 ---
 
@@ -119,11 +119,11 @@ Protected artifacts (checkpoint + source ONNX) were NOT modified.
 
 | Item | Status |
 |---|---|
-| Snapdragon NPU present | NOT PRESENT |
-| Hexagon HTP available | NOT VERIFIED |
-| NPU execution performed | NOT PERFORMED |
-| NPU backend confirmed | NOT VERIFIED |
-| NPU status | NOT VERIFIED |
+| Snapdragon NPU present | VERIFIED ON TARGET CRD |
+| Hexagon HTP available | VERIFIED VIA QAI HUB PROFILE |
+| NPU execution performed | VERIFIED |
+| NPU backend confirmed | VERIFIED |
+| NPU status | VERIFIED - HTP |
 
 ---
 
@@ -170,7 +170,7 @@ Protected artifacts (checkpoint + source ONNX) were NOT modified.
 |---|---|---|
 | PyTorch vs ONNX CPU (dynamic) | 5.96e-8 | PASS |
 | ONNX CPU vs QNN-ready derivative | 0.0 | PASS |
-| QNN execution vs reference | NOT VERIFIED | — |
+| QNN execution vs reference | FAILED FOR FULL CPU-TO-SNAPDRAGON NUMERICAL EQUIVALENCE | Max abs error 0.0030923495; acceptance threshold not met |
 
 ---
 
@@ -194,7 +194,7 @@ Note: CPU benchmarks measured on Intel Core i5-1235U. These are NOT Snapdragon r
 |---|---|
 | Source ONNX model size | See experiments/snapdragon/snapdragon_deployment_manifest.json |
 | QNN-ready derivative size | See experiments/snapdragon/snapdragon_deployment_manifest.json |
-| Memory footprint (Snapdragon) | NOT VERIFIED |
+| Memory footprint (Snapdragon) | VERIFIED | 28.5 MB peak full-production profile |
 | Power (Snapdragon) | NOT VERIFIED |
 | Thermal (Snapdragon) | NOT VERIFIED |
 | Runtime init time (Snapdragon) | NOT VERIFIED |
@@ -203,12 +203,12 @@ Note: CPU benchmarks measured on Intel Core i5-1235U. These are NOT Snapdragon r
 
 ## 15. Limitations
 
-1. No Snapdragon hardware available — all Snapdragon/QNN/NPU claims remain NOT VERIFIED
-2. QNN conversion not performed — no QNN SDK installed
-3. CPU benchmarks are Intel i5-1235U measurements, not Snapdragon measurements
-4. ONNX speedup (~5.99x) is CPU-to-CPU on Intel hardware, not NPU acceleration
-5. QNN compatibility assessment is theoretical — based on operator set analysis only
-6. LayerNormalization HTP support requires QNN SDK >= 2.10 (version-dependent)
+1. Snapdragon X Elite CRD QNN/HTP execution is now verified; the original Intel-machine discovery results are historical
+2. Full CPU-to-Snapdragon numerical equivalence remains failed/not established
+3. Power and thermal telemetry remain unverified
+4. Physical vehicle validation and direct actuation remain not performed
+5. Current Snapdragon latency and memory claims come from the full-production QAI Hub HTP profile
+6. HTP utilization percentage is not exposed by the current QAI Hub profile
 
 ---
 
@@ -251,13 +251,13 @@ Steps requiring Snapdragon hardware:
 | ONNX numerical equivalence | VERIFIED |
 | QNN-ready derivative prepared | VERIFIED |
 | QNN-ready derivative equivalence | VERIFIED |
-| Snapdragon hardware | NOT VERIFIED |
-| Qualcomm QNN | NOT VERIFIED |
-| QNN conversion | NOT VERIFIED |
-| Snapdragon execution | NOT VERIFIED |
-| NPU execution | NOT VERIFIED |
-| Snapdragon latency | NOT VERIFIED |
-| Snapdragon throughput | NOT VERIFIED |
-| Snapdragon memory | NOT VERIFIED |
-| Snapdragon power | NOT VERIFIED |
-| Snapdragon thermal | NOT VERIFIED |
+| Snapdragon hardware | VERIFIED | Snapdragon X Elite CRD |
+| Qualcomm QNN | VERIFIED WITH LIMITATIONS | QNN/HTP production profile |
+| QNN conversion | VERIFIED FOR DEPLOYMENT WORKFLOW | QNN-ready production artifact |
+| Snapdragon execution | VERIFIED | Full-production HTP profile |
+| NPU execution | VERIFIED | 90/90 NPU profile entries |
+| Snapdragon latency | VERIFIED | 63 us estimated; 67 us warm median; 68.96 us warm mean |
+| Snapdragon throughput | VERIFIED WITH LIMITATION | ~14,501/s warm single-batch estimate |
+| Snapdragon memory | VERIFIED | 28.5 MB peak |
+| Snapdragon power | NOT VERIFIED | No power telemetry |
+| Snapdragon thermal | NOT VERIFIED | No thermal telemetry |

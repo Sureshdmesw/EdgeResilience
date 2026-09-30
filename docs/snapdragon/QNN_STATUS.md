@@ -2,7 +2,7 @@
 
 **Phase:** PHASE_3_QUALCOMM_QNN_DISCOVERY
 **Status:** COMPLETE
-**QNN Status:** NOT VERIFIED
+**QNN Status:** VERIFIED ON SNAPDRAGON X ELITE CRD
 
 ---
 
@@ -25,8 +25,8 @@
 |---|---|
 | QNN CPU backend | NOT VERIFIED |
 | QNN GPU backend | NOT VERIFIED |
-| QNN HTP/NPU backend | NOT VERIFIED |
-| QNN runtime initialization | NOT VERIFIED |
+| QNN HTP/NPU backend | VERIFIED - Snapdragon X Elite CRD |
+| QNN runtime initialization | VERIFIED - QNN/HTP profile execution |
 
 ---
 
@@ -63,7 +63,7 @@ qnn-onnx-converter \
   --input_dim vehicle_temporal_features 1,12,17
 ```
 
-**REQUIRES SNAPDRAGON HARDWARE AND QNN SDK — cannot run on current machine.**
+**Historical discovery note:** the original Intel development machine did not have Snapdragon hardware or a local QNN SDK. Subsequent Snapdragon X Elite CRD validation is recorded in the production HTP evidence.
 
 ---
 

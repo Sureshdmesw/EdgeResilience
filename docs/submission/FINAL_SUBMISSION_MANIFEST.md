@@ -25,10 +25,10 @@ Physical measurement on a specific HP Snapdragon-powered PC is not claimed.
 
 ## Current AI Hub Profile
 
-- Estimated inference time: 6.876 ms
-- Estimated inference peak memory: ~36.17 MiB
-- First-load time: ~5.810 s
-- Warm-load time: ~0.599 s
+- Estimated inference latency: 63 us
+- Estimated inference peak memory: 28.5 MB
+- Warm median latency: 67 us
+- Warm mean latency: 68.96 us; P90/P95/P99: 77/82/88 us
 - Execution: Snapdragon NPU / HTP
 
 ## Explicit Validation Boundaries

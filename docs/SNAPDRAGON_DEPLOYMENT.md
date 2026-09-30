@@ -119,7 +119,7 @@ Source: experiments/snapdragon/qnn_ready_model_report.json
 | Snapdragon X Elite target | VERIFIED |
 | QNN / HTP execution | VERIFIED â€” validated workload |
 | HTP profiling | VERIFIED |
-| Full CPU â†” Snapdragon numerical equivalence | NOT VERIFIED |
+| Full CPU â†” Snapdragon numerical equivalence | FAILED $3
 
 The current evidence was generated through Qualcomm AI Hub and the
 Snapdragon X Elite CRD. The remaining validation work is:
@@ -144,12 +144,12 @@ Snapdragon X Elite CRD. The remaining validation work is:
 | Accelerator | Hexagon v73 / HTP |
 | HTP execution | VERIFIED â€” validated workload |
 | HTP utilization | NOT REPORTED |
-| Estimated inference time | 6.876 ms |
-| Throughput | Not reported |
-| Peak inference memory | ~36.17 MiB |
+| Estimated inference time | 63 us |
+| Warm single-batch throughput estimate | ~14,501 inferences/s |
+| Peak inference memory | 28.5 MB |
 | Power consumption | NOT MEASURED |
 | Thermal behavior | NOT MEASURED |
-| Full CPU â†” Snapdragon numerical equivalence | NOT VERIFIED |
+| Full CPU â†” Snapdragon numerical equivalence | FAILED $3
 
 The above Snapdragon measurements are workload-specific profiling results.
 They are not claims of complete vehicle-system latency, power, or thermal
