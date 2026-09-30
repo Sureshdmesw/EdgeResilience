@@ -16,8 +16,8 @@ for Connected Vehicle Safety
 > Snapdragon-powered HP PCs. The current validated implementation
 > establishes the V4 predictive model, ONNX deployment artifact,
 > local inference architecture, and reproducible software
-> demonstration. Snapdragon hardware and Qualcomm QNN execution
-> remain explicitly unverified until tested on the target platform.
+> demonstration. Snapdragon X Elite CRD hardware execution and Qualcomm QNN / HTP profiling
+> have been verified. Physical HP Snapdragon PC validation remains unperformed.
 
 ---
 
@@ -217,20 +217,20 @@ overclaiming during presentation and demonstrates engineering integrity.
 
 ## Remaining Roadmap
 
-1. **Complete Snapdragon numerical validation** — resolve operator-level
-   CPU-to-Snapdragon divergence and establish full production-model
-   numerical equivalence before making an end-to-end equivalence claim.
+1. **Snapdragon numerical-validation limitation** - the complete CPU-to-Snapdragon
+   comparison has been executed and did not meet the established acceptance threshold.
+   The limitation is documented; no end-to-end equivalence claim is made.
 
 2. **Extended Snapdragon benchmarking** — measure complete production-graph
    latency, throughput, memory, power and thermal behavior under a clearly
    defined benchmark protocol.
 
-2. **V2X Agentic AI Cooperative Cyber Resilience** — multi-vehicle
+3. **V2X Agentic AI Cooperative Cyber Resilience** — multi-vehicle
    cooperative threat detection, geographic clustering, mock city
    safety interface (simulation only)
 
-3. **Real-time streaming inference** — continuous inference from a
+4. **Real-time streaming inference** — continuous inference from a
    simulated telemetry stream
 
-4. **Quantization and distillation** — further model compression
+5. **Quantization and distillation** — further model compression
    for more efficient NPU deployment
