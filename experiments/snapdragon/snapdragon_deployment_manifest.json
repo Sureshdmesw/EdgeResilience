@@ -48,14 +48,14 @@
     "onnx_checker": "PASS"
   },
   "hardware": {
-    "snapdragon_present": false,
-    "device": "NOT VERIFIED",
-    "soc": "NOT VERIFIED",
+    "snapdragon_present": true,
+    "device": "Snapdragon X Elite CRD",
+    "soc": "SC8380XP",
     "cpu": "NOT VERIFIED",
     "gpu": "NOT VERIFIED",
-    "npu": "NOT VERIFIED",
-    "memory": "NOT VERIFIED",
-    "os": "NOT VERIFIED"
+    "npu": "Qualcomm QNN / HTP",
+    "memory": "28.5 MB peak during full V4 profile",
+    "os": "Windows 11"
   },
   "software_environment": {
     "driver_versions": "NOT VERIFIED",
@@ -90,8 +90,11 @@
     },
     {
       "name": "qualcomm_qnn_htp_npu",
-      "verified": false,
-      "status": "NOT VERIFIED"
+      "verified": true,
+      "status": "FULL_PRODUCTION_PROFILE_VERIFIED",
+      "profile_job": "jpxlwmxlp",
+      "target_model": "mn75w5l8m",
+      "npu_layers": 90
     }
   ],
   "input_shape": [
@@ -105,9 +108,9 @@
   "input_name": "vehicle_temporal_features",
   "output_name": "future_resilience_degradation",
   "opset": 17,
-  "npu_status": "NOT VERIFIED",
-  "qnn_conversion_status": "NOT PERFORMED \u2014 no QNN SDK present",
-  "snapdragon_execution_status": "NOT PERFORMED \u2014 no Snapdragon hardware present",
+  "npu_status": "VERIFIED_FULL_PRODUCTION_PROFILE",
+  "qnn_conversion_status": "QNN_READY_MODEL_PROFILE_VERIFIED",
+  "snapdragon_execution_status": "VERIFIED_ON_SNAPDRAGON_X_ELITE_CRD_VIA_QNN_HTP",
   "numerical_equivalence": {
     "pytorch_vs_onnx_cpu": {
       "max_absolute_error": 5.96e-08,
@@ -119,7 +122,13 @@
       "result": "PASS",
       "source": "experiments/snapdragon/qnn_ready_model_report.json"
     },
-    "qnn_execution_vs_reference": "NOT VERIFIED"
+    "qnn_execution_vs_reference": {
+      "result": "FAIL",
+      "source": "experiments/v4_cpu_snapdragon_numerical_equivalence.json",
+      "max_absolute_error": 0.0030923495069146156,
+      "mean_absolute_error": 0.0030923495069146156,
+      "max_relative_error": 0.3850368154560905
+    }
   },
   "performance": {
     "cpu_pytorch_mean_latency_ms": 1.66,
@@ -130,21 +139,28 @@
     "onnx_cpu_p95_latency_ms": 0.29,
     "snapdragon_cpu_latency_ms": "NOT VERIFIED",
     "snapdragon_gpu_latency_ms": "NOT VERIFIED",
-    "snapdragon_npu_latency_ms": "NOT VERIFIED",
+    "snapdragon_npu_latency_ms": 0.063,
     "throughput_cpu_pytorch_samples_per_sec": 33800,
     "throughput_onnx_cpu_samples_per_sec": "NOT MEASURED",
-    "throughput_snapdragon_samples_per_sec": "NOT VERIFIED"
+    "throughput_snapdragon_samples_per_sec": 14501.245056393731,
+    "snapdragon_npu_warm_median_latency_ms": 0.067,
+    "snapdragon_npu_warm_mean_latency_ms": 0.06895959595959596,
+    "snapdragon_npu_p90_latency_ms": 0.077,
+    "snapdragon_npu_p95_latency_ms": 0.082,
+    "snapdragon_npu_p99_latency_ms": 0.088,
+    "throughput_snapdragon_warm_median_samples_per_sec": 14925.373134328358,
+    "throughput_note": "Profile-derived single-batch warm timing; not a separately measured sustained throughput benchmark."
   },
   "resource_measurements": {
     "model_size_onnx_bytes": 339253,
     "model_size_qnn_ready_bytes": 320142,
-    "memory_footprint_mb": "NOT VERIFIED",
+    "memory_footprint_mb": 28.5,
     "power_watts": "NOT VERIFIED",
     "thermal": "NOT VERIFIED",
     "runtime_init_time_ms": "NOT VERIFIED"
   },
-  "validation_timestamp": "2026-09-20T10:54:42.277988+00:00",
-  "overall_status": "CPU_AND_ONNX_VALIDATED_SNAPDRAGON_PENDING",
+  "validation_timestamp": "2026-09-30T10:26:20.697883+00:00",
+  "overall_status": "SNAPDRAGON_FULL_PRODUCTION_HTP_PROFILE_VERIFIED_NUMERICAL_EQUIVALENCE_FAIL_POWER_THERMAL_UNVERIFIED",
   "qnn_conversion_command": "qnn-onnx-converter --input_network models/edgeresilience/snapdragon/temporal_predictor_v4_qnn_ready.onnx --output_path models/edgeresilience/snapdragon/temporal_predictor_v4.cpp --input_dim vehicle_temporal_features 1,12,17",
   "safety_boundary": {
     "test_type": "software_simulation",
@@ -152,5 +168,16 @@
     "external_can_transmission": false,
     "direct_actuation": false,
     "production_vehicle_connection": false
+  },
+  "profile_evidence": {
+    "profile_job": "jpxlwmxlp",
+    "target_model": "mn75w5l8m",
+    "device": "Snapdragon X Elite CRD",
+    "estimated_inference_time_us": 63,
+    "warm_sample_count": 99,
+    "npu_execution_entries": 90,
+    "npu_execution_coverage": "100% of profiled execution entries",
+    "htp_utilization_percent": "NOT EXPOSED BY QAI HUB PROFILE",
+    "peak_memory_mb": 28.5
   }
 }

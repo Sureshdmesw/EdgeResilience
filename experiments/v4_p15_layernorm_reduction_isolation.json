@@ -1,0 +1,57 @@
+{
+  "epsilon": 9.999999747378752e-06,
+  "mean_fp32": 0.11130240559577942,
+  "var_fp32": 4.415753364562988,
+  "mean_one_pass": 0.11130240559577942,
+  "var_one_pass": 4.41575288772583,
+  "mean_fp16": 0.111328125,
+  "var_fp16": 4.41796875,
+  "mean_16input": 0.11130237579345703,
+  "var_16input_onepass": 4.415752410888672,
+  "cases": {
+    "two_pass_fp32": {
+      "max_absolute_error": 0.0007765293121337891,
+      "mean_absolute_error": 0.0001625255863473285,
+      "rmse": 0.00024313560264318423,
+      "max_relative_error": 0.0004504561486631791,
+      "max_relative_error_percent": 0.04504561486631791,
+      "max_error_index": 48,
+      "candidate_at_max_error": -2.1574268341064453,
+      "snapdragon_at_max_error": -2.158203363418579,
+      "signed_snapdragon_minus_candidate": -0.0007765293121337891
+    },
+    "one_pass_fp32": {
+      "max_absolute_error": 0.0007765293121337891,
+      "mean_absolute_error": 0.0001625255863473285,
+      "rmse": 0.00024313560264318423,
+      "max_relative_error": 0.0004504561486631791,
+      "max_relative_error_percent": 0.04504561486631791,
+      "max_error_index": 48,
+      "candidate_at_max_error": -2.1574268341064453,
+      "snapdragon_at_max_error": -2.158203363418579,
+      "signed_snapdragon_minus_candidate": -0.0007765293121337891
+    },
+    "fp16_reduction": {
+      "max_absolute_error": 0.001298666000366211,
+      "mean_absolute_error": 0.0002416313327557873,
+      "rmse": 0.00036423580702725494,
+      "max_relative_error": 0.0017482574258316167,
+      "max_relative_error_percent": 0.17482574258316166,
+      "max_error_index": 48,
+      "candidate_at_max_error": -2.156904697418213,
+      "snapdragon_at_max_error": -2.158203363418579,
+      "signed_snapdragon_minus_candidate": -0.001298666000366211
+    },
+    "fp16_input_one_pass_fp32": {
+      "max_absolute_error": 0.0007762908935546875,
+      "mean_absolute_error": 0.00016251554552582093,
+      "rmse": 0.000243126944510799,
+      "max_relative_error": 0.0004508009940161918,
+      "max_relative_error_percent": 0.04508009940161918,
+      "max_error_index": 48,
+      "candidate_at_max_error": -2.1574270725250244,
+      "snapdragon_at_max_error": -2.158203363418579,
+      "signed_snapdragon_minus_candidate": -0.0007762908935546875
+    }
+  }
+}

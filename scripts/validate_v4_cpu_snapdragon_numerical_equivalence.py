@@ -83,8 +83,8 @@ print("SNAPDRAGON OUTPUT:", snapdragon_output)
 # ------------------------------------------------------------
 # Numerical equivalence
 # ------------------------------------------------------------
-cpu = np.asarray(cpu_output, dtype=np.float64)
-snap = np.asarray(snapdragon_output, dtype=np.float64)
+cpu = np.asarray(cpu_output, dtype=np.float64).reshape(-1)
+snap = np.asarray(snapdragon_output, dtype=np.float64).reshape(-1)
 
 if cpu.shape != snap.shape:
     raise RuntimeError(

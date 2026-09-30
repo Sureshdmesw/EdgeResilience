@@ -1,0 +1,23 @@
+{
+  "status": "FAIL",
+  "model": "E:\\EdgeResilience\\models\\edgeresilience\\snapdragon\\temporal_predictor_v4_qnn_ready.onnx",
+  "compile_job": "jp1n962kg",
+  "target_model": "mn75w5l8m",
+  "inference_job": "jp8el8wkp",
+  "device": "Snapdragon X Elite CRD",
+  "input_shape": [
+    1,
+    12,
+    17
+  ],
+  "output_shape": [
+    1
+  ],
+  "max_abs_error": 0.0030923495069146156,
+  "mean_abs_error": 0.0030923495069146156,
+  "rmse": 0.0030923495069146156,
+  "max_relative_error": 0.3850368154560905,
+  "mean_relative_error": 0.3850368154560905,
+  "max_abs_tolerance": 0.0001,
+  "mean_abs_tolerance": 1e-05
+}

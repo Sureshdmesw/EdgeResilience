@@ -1,0 +1,13 @@
+{
+  "max_absolute_error_after_cpu_fp16_roundtrip": 0.0019533634185791016,
+  "mean_absolute_error_after_cpu_fp16_roundtrip": 0.0005090495869808365,
+  "rmse_after_cpu_fp16_roundtrip": 0.0006825827285459741,
+  "max_relative_error": 0.1416667796947338,
+  "max_relative_error_percent": 14.16667796947338,
+  "max_error_index": 21,
+  "cpu_fp16_value_at_max_error": 2.908203125,
+  "snapdragon_value_at_max_error": 2.910156488418579,
+  "exact_float32_equality": false,
+  "fp16_bitwise_equality": false,
+  "different_fp16_elements": 48
+}

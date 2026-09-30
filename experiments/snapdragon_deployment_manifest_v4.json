@@ -41,9 +41,13 @@
   "full_model": {
     "compile_verified": true,
     "compile_job": "jgdd3v6zg",
-    "htp_verified": false,
-    "htp_profile_job": "j5wl79zmp",
-    "htp_failure": "QNN graph finalization failed with error code 6000"
+    "htp_verified": true,
+    "htp_profile_job": "jpxlwmxlp",
+    "htp_inference_ms": 0.063,
+    "npu_layers": 90,
+    "peak_memory_mb": 28.5,
+    "numerical_equivalence": "FAIL",
+    "numerical_equivalence_source": "experiments/v4_cpu_snapdragon_numerical_equivalence.json"
   },
   "verified_components": [
     {
@@ -75,5 +79,19 @@
       "profile_job": "jgk24dlog"
     }
   ],
-  "status": "SNAPDRAGON_COMPONENT_LEVEL_VALIDATED_FULL_MODEL_HTP_NOT_VERIFIED"
+  "status": "SNAPDRAGON_FULL_MODEL_HTP_PROFILE_VERIFIED_NUMERICAL_EQUIVALENCE_FAIL_POWER_THERMAL_UNVERIFIED",
+  "performance": {
+    "estimated_inference_ms": 0.063,
+    "warm_median_ms": 0.067,
+    "warm_mean_ms": 0.06895959595959596,
+    "p90_ms": 0.077,
+    "p95_ms": 0.082,
+    "p99_ms": 0.088,
+    "warm_mean_inferences_per_sec": 14501.245056393731,
+    "warm_median_inferences_per_sec": 14925.373134328358,
+    "peak_memory_mb": 28.5,
+    "htp_utilization_percent": "NOT EXPOSED BY QAI HUB PROFILE",
+    "power_watts": "NOT VERIFIED",
+    "thermal": "NOT VERIFIED"
+  }
 }
